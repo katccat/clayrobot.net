@@ -1,0 +1,29 @@
+<!-- by Khan -->
+<!doctype html>
+<html lang="en">
+
+<head>
+	<title>CLAYROBOT.NET</title>
+	<script>
+		(function () {
+			const theme = localStorage.getItem('pref_theme');
+			if (theme === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+		})();
+	</script>
+	<link rel="icon" type="image/png" href="images/favicon.png">
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<!-- <meta name="description" content="A memory match game featuring random images from the web for the tiles!"> -->
+</head>
+
+<body>
+	<div id="background">
+		<video autoplay muted loop playsinline>
+			<!-- <source src="images/grid24.webm" type="video/webm"> -->
+		</video>
+	</div>
+    <h1>CLAYROBOT.NET</h1>
+</body>
+
+</html>

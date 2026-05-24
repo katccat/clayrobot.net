@@ -1,0 +1,21 @@
+[[redirects]]
+  from = "/recaptcha"
+  to = "/games/recaptcha"
+  status = 301
+
+[[redirects]]
+  from = "/delivery"
+  to = "/games/autobahn-delivery"
+  status = 301
+
+[[redirects]]
+  from = "/asteroids"
+  to = "/games/asteroids"
+  status = 301
+
+[build]
+  command = "git submodule update --remote && cd games/recaptcha && npm ci && npm run build && cp -r dist/. ."
+  publish = "."
+
+[build.environment]
+  GIT_SUBMODULE_STRATEGY = "recursive"

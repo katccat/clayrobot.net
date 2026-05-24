@@ -1,0 +1,9 @@
+[submodule "games/recaptcha"]
+	path = games/recaptcha
+	url = https://github.com/katccat/daily-trends-memory-game.git
+[submodule "games/pong"]
+	path = games/pong
+	url = https://github.com/katccat/Basic-Pong-JS.git
+[submodule "games/asteroids"]
+	path = games/asteroids
+	url = https://github.com/katccat/asteroids100.git
