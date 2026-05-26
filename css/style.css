@@ -64,6 +64,11 @@ body {
     color: white;
 	padding: 5vh 10vw 5vh 10vw;
 }
+@media (max-width: 600px) {
+	body {
+		padding: 4vh 5vw 4vh 5vw;
+	}
+}
 body #background {
 	position: fixed;
 	top: 0;
