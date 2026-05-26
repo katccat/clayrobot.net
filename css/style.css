@@ -1,3 +1,48 @@
+@font-face {
+    font-family: 'Matroska';
+    src: url('../fonts/Matroska-RppG6.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+#title {
+	font-family: 'Matroska';
+	text-shadow:
+			0 0 1px #fff,
+			0 0 2px #fff,
+			0 0 5px #fff;
+	animation: glow-pulse 3s ease-in-out 3;
+	line-height: 1.5;
+}
+img {
+	width: 300px;
+}
+
+@keyframes glow-pulse {
+	0%, 100% {
+		text-shadow:
+			0 0 1px #fff,
+			0 0 2px #fff,
+			0 0 5px #fff;
+	}
+	50% {
+		text-shadow:
+			0 0 2px #fff,
+			0 0 5px #fff,
+			0 0 10px #fff;
+	}
+}
+h1 {
+    font-family: 'Matroska';
+}
+a {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+	font-weight: bold;
+}
+body {
+    background-color: black;
+    color: white;
+	padding: 5vh 10vw 5vh 10vw;
+}
 body #background {
 	position: fixed;
 	top: 0;
@@ -14,4 +59,27 @@ body #background video {
 	height: 100%;
 	object-fit: cover;
 	object-position: center;
+}
+#game-links {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5em;
+	margin-top: 1.5em;
+}
+#game-links a {
+	color: white;
+	text-decoration: none;
+	opacity: 0;
+	transition: opacity 0.5s ease;
+	font-size: 1.1rem;
+}
+#game-links a.visible {
+	opacity: 1;
+}
+#game-links a:hover {
+	font-style: italic;
+	text-shadow:
+		0 0 1px #fff,
+		0 0 4px #fff,
+		0 0 10px #fff;
 }

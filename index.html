@@ -4,13 +4,13 @@
 
 <head>
 	<title>CLAYROBOT.NET</title>
-	<script>
+	<!-- <script>
 		(function () {
 			const theme = localStorage.getItem('pref_theme');
 			if (theme === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
 		})();
-	</script>
-	<link rel="icon" type="image/png" href="images/favicon.png">
+	</script> -->
+	<link rel="icon" type="image/png" href="favicon3.png">
 	<link rel="stylesheet" href="css/reset.css">
 	<link rel="stylesheet" href="css/style.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -23,7 +23,16 @@
 			<!-- <source src="images/grid24.webm" type="video/webm"> -->
 		</video>
 	</div>
-    <h1>CLAYROBOT.NET</h1>
+	<h1 id="title"></h1>
+	<nav id="game-links">
+		<a href="games/recaptcha/">I'm not a Robot</a>
+		<a href="games/asteroids/">Asteroids</a>
+		<a href="games/autobahn-delivery/">Autobahn Delivery Inc.</a>
+		<a href="games/pong/">Pong</a>
+	</nav>
+
+	<!-- <img class="pic" src="images/portrait.png"> -->
+	<script type="module" src="script.js"></script>
 </body>
 
 </html>
