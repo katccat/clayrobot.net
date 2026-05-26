@@ -37,6 +37,10 @@ async function typeText (text, delayMs, ...elements) {
 		lines.forEach((line, li) => {
 			if (li > 0) element.appendChild(document.createElement('br'));
 			for (const char of line) {
+				if (char === '|') {
+					element.appendChild(document.createElement('wbr'));
+					continue;
+				}
 				const span = document.createElement('span');
 				span.textContent = char;
 				span.style.opacity = '0';
@@ -82,12 +86,12 @@ const deleteText = async function (delayMs, ...elements) {
 }
 
 const title = document.getElementById('title');
+const splash = document.getElementById('splash');
 await new Promise(resolve => setTimeout(resolve, 600));
-await typeText(['Against the dark,', 'a tall white fountain plays.'], 100, title);
+await typeText(['Against the dark,', 'a tall white fountain played.'], 100, splash);
 await new Promise(resolve => setTimeout(resolve, 2000));
-await deleteText(50, title);
-await new Promise(resolve => setTimeout(resolve, 500));
-await typeText(['CLAYROBOT.NET'], 140, title);
+document.body.classList.add('show-title');
+await new Promise(resolve => setTimeout(resolve, 800));
 
 const gameLinks = [...document.querySelectorAll('#game-links a')];
 for (const link of gameLinks) {
