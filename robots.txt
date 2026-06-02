@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /games/recaptcha/privacy
+Disallow: /recaptcha/privacy
+
+Sitemap: https://clayrobot.net/sitemap.xml

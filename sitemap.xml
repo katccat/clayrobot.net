@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://clayrobot.net/</loc>
+  </url>
+  <url>
+    <loc>https://clayrobot.net/games/recaptcha/</loc>
+  </url>
+  <url>
+    <loc>https://clayrobot.net/games/asteroids/</loc>
+  </url>
+  <url>
+    <loc>https://clayrobot.net/games/autobahn-delivery/</loc>
+  </url>
+  <url>
+    <loc>https://clayrobot.net/games/pong/</loc>
+  </url>
+</urlset>
