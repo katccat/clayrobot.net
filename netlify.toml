@@ -13,9 +13,14 @@
   to = "/games/asteroids"
   status = 301
 
+[[redirects]]
+  from = "/pong"
+  to = "/games/pong"
+  status = 301
+
 [build]
-  command = "git submodule update --remote && cd games/recaptcha && npm ci && npm run build && cp -r dist/. ."
-  publish = "."
+  command = "git submodule update --remote && cd games/recaptcha && npm ci && npm run build && cp -r dist/. . && cd ../../ && npm ci && npm run build"
+  publish = "dist"
 
 [build.environment]
   GIT_SUBMODULE_STRATEGY = "recursive"

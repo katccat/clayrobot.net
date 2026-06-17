@@ -1,0 +1,45 @@
+technologies considered:
+- vite
+- eleventy
+- react
+- automatic webp conversion
+- open to considering different technologies too
+- Am already using netlify to host
+
+Aesthetic: Futuristic, digital brutalist with black background and prominent use of Matroska font.
+A portfolio website also that presents like a developer group or firm (ClayRobot)
+Major headers like site logo or splash elements use matroska, minor headers use a font like pepi bold or lazare grotesk (ideally a font that is free use and free), and text is either something like google sans or arial
+custom 404 page
+Pages:
+	main
+		when loaded into, has a brief animated splash screen with rows of large text going down
+		about button
+		featured projects
+		artstation
+	about
+		information about site with FAQ
+		bio about me
+		artstation link (passing mention of being a 3d artist)
+		link to resume, linkedin, github
+	projects
+		(games are laid out in tiles with a title and description. they contain a static image that animates on hover)
+		clicking on the tile goes directly to the game (or only to the source if it is not published) and there is a github button to go to the source
+		I'm not a Robot
+		Asteroids
+		Autobahn Delivery Inc. Demo
+		damonwelber.com
+	posts
+		blog posts laid out in grid, with images, tags, and publish date
+		blogs are written in markdown
+		would benefit the seo but it's mostly for fun and thoughts
+	footer
+		linkedin
+		github
+Design ideas:
+- black and white brutalism without being too busy
+- black background (though light mode toggle exists)
+- minimal use of rounded borders
+- seamless tile like grids with sharp edges, no gap between tiles
+- reusable components (certain links, elements like footer and header)
+- scrolling dot matrix overlays (on things like images or major text)
+- subtle glow/bleed effect on major text (via text shadow)
