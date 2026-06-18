@@ -3,8 +3,8 @@ technologies considered:
 - eleventy
 - react
 - automatic webp conversion
-- open to considering different technologies too
-- Am already using netlify to host
+- automatic bundling
+- am already using netlify to host
 
 Aesthetic: Futuristic, digital brutalist with black background and prominent use of Matroska font.
 A portfolio website also that presents like a developer group or firm (ClayRobot)
@@ -43,3 +43,4 @@ Design ideas:
 - reusable components (certain links, elements like footer and header)
 - scrolling dot matrix overlays (on things like images or major text)
 - subtle glow/bleed effect on major text (via text shadow)
+- use of blacked or whited out text (depending on theme) like the text is being highlighted
