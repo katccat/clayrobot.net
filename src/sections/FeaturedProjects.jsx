@@ -37,7 +37,7 @@ export default function FeaturedProjects() {
           <article className="tile" key={project.title}>
             <a className="tile__link" href={project.href}>
               <div className="tile__media">
-                <img src="/public/images/grid.png"></img>
+                <img src="/images/grid.png"></img>
               </div>
               <div className="tile__body">
                 <h3 className="tile__title">{project.title}</h3>

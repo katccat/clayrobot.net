@@ -8,7 +8,7 @@ const INDEX = [
 export default function Hero() {
   return (
     <div className="hero">
-      <img src="/public/images/grid.webp" className="hero-image"></img>
+      <img src="/images/grid.webp" className="hero-image"></img>
       <section className="hero-content">
         <h1 className="hero__wordmark" data-matrix>
           CLAY<wbr/>ROBOT<wbr/>.net
