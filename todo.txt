@@ -1,18 +1,15 @@
-technologies considered:
+technology stack:
 - vite
-- eleventy
 - react
-- automatic webp conversion
-- automatic bundling
 - am already using netlify to host
 
-Aesthetic: Futuristic, digital brutalist with black background and prominent use of Matroska font.
-A portfolio website also that presents like a developer group or firm (ClayRobot)
+Aesthetic: Digital brutalist with black background and prominent use of Matroska font.
+A personal website that presents like a developer group or firm (CLAYROBOT)
 Major headers like site logo or splash elements use matroska, minor headers use a font like pepi bold or lazare grotesk (ideally a font that is free use and free), and text is either something like google sans or arial
-custom 404 page
+
 Pages:
 	main
-		when loaded into, has a brief animated splash screen with rows of large text going down
+		when loaded into, has a brief animated splash screen with rows of large text going down (unused/inspo/splash1.png)
 		about button
 		featured projects
 		artstation
@@ -35,12 +32,23 @@ Pages:
 	footer
 		linkedin
 		github
+		about
+
 Design ideas:
+- typography like in /unused/inspo/desktopgeneration.png
 - black and white brutalism without being too busy
 - black background (though light mode toggle exists)
 - minimal use of rounded borders
 - seamless tile like grids with sharp edges, no gap between tiles
 - reusable components (certain links, elements like footer and header)
+- take cues from print media
 - scrolling dot matrix overlays (on things like images or major text)
 - subtle glow/bleed effect on major text (via text shadow)
 - use of blacked or whited out text (depending on theme) like the text is being highlighted
+
+
+DO NOT DO:
+- monospace fonts
+- bad typography like excessive letter spacing
+- use of dashes anywhere
+- use of headlines of any kind or vapid slogans (e.g. Engineer / Builder). this is not a resume or a linkedin profile.
