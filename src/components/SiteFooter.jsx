@@ -1,7 +1,9 @@
+import { GITHUB, LINKEDIN } from '../links'
+
 const FOOTER_LINKS = [
-  { label: 'LinkedIn', href: '#', external: true },
-  { label: 'GitHub', href: '#', external: true },
-  { label: 'About', href: '/about/', external: false },
+  { label: 'LinkedIn', href: LINKEDIN },
+  { label: 'GitHub', href: GITHUB },
+  { label: 'About', href: '/about/' },
 ]
 
 export default function SiteFooter() {
@@ -11,12 +13,7 @@ export default function SiteFooter() {
       <ul className="site-footer__links">
         {FOOTER_LINKS.map((link) => (
           <li key={link.label}>
-            <a
-              href={link.href}
-              {...(link.external
-                ? { target: '_blank', rel: 'noreferrer noopener' }
-                : {})}
-            >
+            <a href={link.href}>
               {link.label}
             </a>
           </li>

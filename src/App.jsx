@@ -13,9 +13,11 @@ export default function App() {
     <>
       <Splash />
       <SiteNav theme={theme} onToggleTheme={toggle} />
+      <div className="site-nav-spacer" />
       <main className="site-main">
+        {/* <img src="/images/grid.webp" className="hero-image"></img> */}
         <Hero />
-        <FeaturedProjects />
+        <FeaturedProjects projectKeys={['inar']} />
         {/* <ArtStation /> */}
       </main>
       <SiteFooter />

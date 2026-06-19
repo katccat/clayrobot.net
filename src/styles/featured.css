@@ -1,0 +1,103 @@
+/* ============================================================
+   section head (shared)
+   ============================================================ */
+.section-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-block: clamp(1.5rem, 4vw, 2.5rem) 1.25rem;
+}
+
+.section-head__title {
+  font-family: var(--font-head);
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: clamp(1.5rem, 5vw, 3rem);
+  letter-spacing: 0.01em;
+}
+
+/* ============================================================
+   featured projects — seamless tile grid
+   ============================================================ */
+.featured {
+  padding-bottom: clamp(2rem, 6vw, 4rem);
+}
+
+.tile-grid {
+  display: grid;
+  /* word-break: break-all; */
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 800px;
+  /* seamless: a single shared border via collapsing offsets */
+  /* border: var(--line-w) solid var(--line); */
+}
+
+.tile {
+  aspect-ratio: 1 / 1;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg);
+}
+
+.tile__link {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.tile__media {
+  /* aspect-ratio: 1; */
+  overflow: hidden;
+  background: var(--inset);
+  display: flex;
+  align-items: flex-end;
+}
+
+/* static image animates on hover (placeholder: the label drifts/zooms) */
+.tile:hover .tile__media::after {
+  animation-duration: 6s;
+}
+
+.tile__body {
+  padding: 1rem 1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  flex: 1;
+}
+
+.tile__title {
+  font-family: var(--font-head);
+  font-weight: 800;
+  /* text-transform: uppercase; */
+  font-size: 1.1rem;
+  letter-spacing: 0.01em;
+}
+
+.tile__desc {
+  color: var(--muted);
+  font-size: 0.95rem;
+  max-width: 38ch;
+}
+
+.tile__source {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-family: var(--font-head);
+  font-weight: 600;
+  /* text-transform: uppercase; */
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  padding: 0.35rem 0.55rem;
+  background: var(--bg);
+  border-left: var(--line-w) solid var(--line);
+  border-bottom: var(--line-w) solid var(--line);
+}
+
+.tile__source:hover {
+  background: var(--fg);
+  color: var(--bg);
+}

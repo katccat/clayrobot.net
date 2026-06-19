@@ -1,4 +1,10 @@
 @import "./reset.css";
+@import "./nav.css";
+@import "./hero.css";
+@import "./featured.css";
+@import "./footer.css";
+@import "./splash.css";
+
 @font-face {
   font-family: 'Matroska';
   src: url('/fonts/Matroska-RppG6.ttf') format('truetype');
@@ -13,7 +19,8 @@
 
   --maxw: 1200px;
   --pad: clamp(1.25rem, 4vw, 4rem);
-  --line-w: 2px;
+  --line-w: max(1.2px,0.2vw);
+  --nav-h: 3.5rem;
 }
 
 html[data-theme='dark'] {
@@ -87,14 +94,7 @@ html[data-theme='light'] {
     transparent 40%
   );
   background-size: 6px 6px;
-  opacity: 1;
-  /* animation: matrix-scroll 30s linear infinite; */
-}
-
-@keyframes matrix-scroll {
-  to {
-    background-position: 200px 200px;
-  }
+  opacity: 0.8;
 }
 
 /* ============================================================
@@ -109,417 +109,19 @@ html[data-theme='light'] {
   flex: 1;
 }
 
-section {
-  padding-inline: var(--pad);
-}
-
-/* ============================================================
-   navigation
-   ============================================================ */
-.site-nav {
-  /* width: 100%; */
-  z-index: 99;
-  position: sticky;
-  top: 0;
-  z-index: 40;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1.5rem;
-  padding: 0.9rem var(--pad);
-  background: rgb(from var(--bg) r g b / 0.92);
-  backdrop-filter: invert(1) blur(1px);
-}
-
-.site-nav__logo {
-  font-family: var(--font-head);
-  font-size: clamp(1.25rem, 3vw, 1.75rem);
-  letter-spacing: 0.01em;
-  line-height: 1;
-  font-weight: 500;
-}
-
-.site-nav__right {
-  display: flex;
-  flex: 1;
-  align-items: center;
-  justify-content: right;
-  gap: clamp(1rem, 3vw, 2.25rem);
-}
-
-.site-nav__links {
-  display: flex;
-  gap: clamp(0.9rem, 2.5vw, 2rem);
-  font-family: var(--font-head);
-  font-weight: 600;
-  /* text-transform: uppercase; */
-  font-size: 0.9rem;
-  letter-spacing: 0.02em;
-}
-
-.site-nav__links a:hover {
-  background: var(--fg);
-  color: var(--bg);
-}
-
-.theme-toggle {
-  font-family: var(--font-head);
-  font-weight: 600;
-  text-transform: uppercase;
-  font-size: 0.75rem;
-  letter-spacing: 0.04em;
-  padding: 0.4rem 0.7rem;
-  border: var(--line-w) solid var(--line);
-}
-
-.theme-toggle:hover {
-  background: var(--fg);
-  color: var(--bg);
-}
-
-/* ============================================================
-   hero
-   ============================================================ */
-html[data-theme='dark'] .hero-image {
-  display: none;
-}
-.hero-image {
-  z-index: 0;
-  width: 100%;
-  position: absolute;
-}
-.hero {
-  padding: 0;
-  /* padding-block: clamp(3rem, 9vw, 7rem) clamp(2rem, 5vw, 4rem);
-  border-bottom: var(--line-w) solid var(--line); */
-  /* max-width: 800px; */
-}
-.hero-content {
-  position: relative;
-  z-index: 1;
-  padding-block: clamp(20px, 5vw, 7rem) clamp(2rem, 5vw, 4rem);
-  /* border-bottom: var(--line-w) solid var(--line); */
-}
-
-.hero__wordmark {
-  max-width: 800px;
-  font-family: var(--font-display);
-  font-weight: 900;
-  line-height: 0.86;
-  /* font-size: clamp(3.5rem, 19vw, 16rem); */
-  font-size: min(14vw, 140px);
-  letter-spacing: 0.005em;
-  text-shadow: var(--glow);
-}
-
-.hero__index {
-  margin-top: clamp(2rem, 5vw, 3.5rem);
-  border-top: var(--line-w) solid var(--line);
-  max-width: 640px;
-}
-
-.hero__index-item {
-  border-bottom: var(--line-w) solid var(--line);
-}
-
-.hero__index-item a {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 1rem;
-  padding: 0.6rem 0.2rem;
-  font-family: var(--font-head);
-  font-weight: 800;
-  /* text-transform: uppercase; */
-  text-transform: lowercase;
-  font-size: clamp(1.4rem, 4vw, 2.25rem);
-  letter-spacing: 0.01em;
+a:not(.no-animate) {
   transition: padding-inline 120ms ease;
 }
-
-.hero__index-item a:hover {
-  background: var(--fg);
-  color: var(--bg);
-  padding-inline: 0.6rem;
-}
-
-.hero__index-meta {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 0.6em;
-  font-weight: 600;
-  font-family: var(--font-display);
-}
-
-html[data-theme='dark'] .hero__index-arrow img {
-  filter: invert(1);
-}
-html[data-theme='dark'] .hero__index-item:hover .hero__index-arrow img {
-  filter: invert(0);
-}
-
-.hero__index-arrow img {
-  /* opacity: 0; */
-  /* transform: rotate(-45deg); */
-  width: 0.9em;
-  height: 0.9em;
-  margin-right: 10px;
-  /* opacity: 0; */
-  /* transform: rotate(45deg); */
-  /* transition: transform 100ms ease; */
-}
-
-.hero__index-item:hover .hero__index-arrow img {
-  filter: invert(1);
-  opacity: 1;
-  transform: rotate(45deg);
-}
-
-/* ============================================================
-   section head (shared)
-   ============================================================ */
-.section-head {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 1rem;
-  padding-block: clamp(1.5rem, 4vw, 2.5rem) 1.25rem;
-}
-
-.section-head__title {
-  font-family: var(--font-head);
-  font-weight: 900;
-  text-transform: uppercase;
-  font-size: clamp(1.5rem, 5vw, 3rem);
-  letter-spacing: 0.01em;
-}
-
-.section-head__count {
-  font-family: var(--font-head);
-  font-weight: 600;
-  text-transform: uppercase;
-  font-size: 0.8rem;
-  letter-spacing: 0.04em;
-  color: var(--muted);
-}
-
-/* ============================================================
-   featured projects — seamless tile grid
-   ============================================================ */
-.featured {
-  padding-bottom: clamp(2rem, 6vw, 4rem);
-}
-
-.tile-grid {
-  display: grid;
-  word-break: break-all;
-  grid-template-columns: repeat(2, 1fr);
-  max-width: 800px;
-  /* seamless: a single shared border via collapsing offsets */
-  /* border: var(--line-w) solid var(--line); */
-}
-
-.tile {
-  aspect-ratio: 1 / 1;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  background: var(--bg);
-}
-
-.tile__link {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-
-.tile__media {
-  /* aspect-ratio: 1; */
-  overflow: hidden;
-  background: var(--inset);
-  display: flex;
-  align-items: flex-end;
-}
-
-.tile__media-label {
-  font-family: var(--font-display);
-  font-size: clamp(1.5rem, 5vw, 3rem);
-  line-height: 0.9;
-  padding: 0.4em;
-  color: var(--fg);
-  opacity: 0.14;
-  transform: scale(1);
-  transition: transform 400ms ease, opacity 400ms ease;
-}
-
-/* static image animates on hover (placeholder: the label drifts/zooms) */
-.tile:hover .tile__media-label {
-  transform: scale(1.18) translateY(-4%);
-  opacity: 0.28;
-}
-
-.tile:hover .tile__media::after {
-  animation-duration: 6s;
-}
-
-.tile__body {
-  padding: 1rem 1rem 1.25rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.35rem;
-  flex: 1;
-}
-
-.tile__title {
-  font-family: var(--font-head);
-  font-weight: 800;
-  text-transform: uppercase;
-  font-size: 1.1rem;
-  letter-spacing: 0.01em;
-}
-
-.tile__desc {
-  color: var(--muted);
-  font-size: 0.95rem;
-  max-width: 38ch;
-}
-
-.tile__source {
-  position: absolute;
-  top: 0;
-  right: 0;
-  font-family: var(--font-head);
-  font-weight: 600;
-  /* text-transform: uppercase; */
-  font-size: 0.72rem;
-  letter-spacing: 0.04em;
-  padding: 0.35rem 0.55rem;
-  background: var(--bg);
-  border-left: var(--line-w) solid var(--line);
-  border-bottom: var(--line-w) solid var(--line);
-}
-
-.tile__source:hover {
+a:hover {
   background: var(--fg);
   color: var(--bg);
 }
-
-/* ============================================================
-   artstation note
-   ============================================================ */
-.artstation {
-  padding-block: clamp(2.5rem, 7vw, 5rem);
-  border-top: var(--line-w) solid var(--line);
+a:not(.no-animate):hover {
+  padding-inline: 0.3rem;
 }
 
-.artstation__note {
-  font-family: var(--font-head);
-  font-weight: 500;
-  font-size: clamp(1.1rem, 3vw, 1.6rem);
-  max-width: 40ch;
-}
-
-.artstation__link {
-  background: var(--fg);
-  color: var(--bg);
-  padding: 0 0.15em;
-}
-
-.artstation__link:hover {
-  background: transparent;
-  color: var(--fg);
-  outline: var(--line-w) solid var(--line);
-}
-
-/* ============================================================
-   footer
-   ============================================================ */
-.site-footer {
-  /* border-top: var(--line-w) solid var(--line); */
-  padding: clamp(2rem, 5vw, 2rem) var(--pad);
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1.5rem;
-  bottom: 0;
-}
-
-.site-footer__mark {
-  font-family: var(--font-display);
-  font-size: clamp(1.5rem, 4vw, 2.25rem);
-}
-
-.site-footer__links {
-  display: flex;
-  gap: clamp(1rem, 3vw, 2rem);
-  font-family: var(--font-head);
-  font-weight: 600;
-  text-transform: uppercase;
-  font-size: 0.85rem;
-  letter-spacing: 0.03em;
-}
-
-.site-footer__links a:hover {
-  background: var(--fg);
-  color: var(--bg);
-}
-
-.site-footer__meta {
-  font-family: var(--font-head);
-  font-size: 0.78rem;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--muted);
-}
-
-/* ============================================================
-   splash intro
-   ============================================================ */
-.splash {
-  position: fixed;
-  inset: 0;
-  z-index: 100;
-  background: var(--bg);
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  opacity: 1;
-  transition: opacity 480ms ease;
-}
-
-.splash--leaving {
-  opacity: 0;
-}
-
-.splash__reel {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
-.splash__row {
-  user-select: none;
-  font-family: var(--font-display);
-  text-shadow: var(--glow);
-  font-weight: 900;
-  line-height: 0.92;
-  /* font-size: clamp(3rem, 13vw, 11rem); */
-  font-size: 10rem;
-  white-space: nowrap;
-  opacity: 0;
-  transition: opacity 0.4s linear;
-}
-
-.splash__row--visible {
-  opacity: 1;
-}
-
-.splash__row:nth-child(even) {
-  /* text-indent: 6vw; */
-  /* color: rgb(51, 69, 207); */
+section {
+  padding-inline: var(--pad);
 }
 
 /* ============================================================
@@ -533,19 +135,12 @@ html[data-theme='dark'] .hero__index-item:hover .hero__index-arrow img {
   .site-nav__links {
     gap: 0.8rem;
   }
-}
 
-@media (prefers-reduced-motion: reduce) {
-  [data-matrix]::after {
-    animation: none;
+  html[data-theme='dark'] {
+    --glow: 0 0 2px #fff;
   }
 
-  .splash__row {
-    transition: none;
-  }
-
-  .tile__media-label,
-  .hero__index-item a {
-    transition: none;
+  html[data-theme='light'] {
+    --glow: 0 0 2px #000000;
   }
 }
