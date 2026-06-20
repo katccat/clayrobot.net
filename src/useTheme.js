@@ -6,7 +6,7 @@ function getInitialTheme() {
   if (typeof window === 'undefined') return 'dark'
   const stored = window.localStorage.getItem(STORAGE_KEY)
   if (stored === 'light' || stored === 'dark') return stored
-  return 'dark'
+  return 'light'
 }
 
 // Reads, applies, and persists the dark/light theme on the root element.

@@ -1,29 +1,31 @@
+import { Link } from 'react-router-dom'
+
 const LINKS = [
-  { label: 'Projects', href: '/projects/' },
-  { label: 'Posts', href: '/posts/' },
-  { label: 'About', href: '/about/' },
+  { label: 'Projects', href: '/projects' },
+  { label: 'Posts', href: '/posts' },
+  { label: 'About', href: '/about' },
 ]
 
 export default function SiteNav({ theme, onToggleTheme }) {
   return (
     <nav className="site-nav">
-      <a href="/" className="site-nav__logo">
-        clayrobot
-      </a>
+      <Link to="/" className="site-nav__logo">
+        clay<br></br>robot
+      </Link>
       <div className="site-nav__right">
         <div className="site-nav__links">
           {LINKS.map((link) => (
-            <a href={link.href}>{link.label}</a>
+            <Link key={link.label} to={link.href}>{link.label}</Link>
           ))}
         </div>
-        {/* <button
+        <button
           type="button"
           className="theme-toggle"
           onClick={onToggleTheme}
           aria-label="Toggle color theme"
         >
           {theme === 'dark' ? 'Light' : 'Dark'}
-        </button> */}
+        </button>
       </div>
     </nav>
   )

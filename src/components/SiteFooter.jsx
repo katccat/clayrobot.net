@@ -1,9 +1,10 @@
+import { Link } from 'react-router-dom'
 import { GITHUB, LINKEDIN } from '../links'
 
 const FOOTER_LINKS = [
-  { label: 'LinkedIn', href: LINKEDIN },
-  { label: 'GitHub', href: GITHUB },
-  { label: 'About', href: '/about/' },
+  { label: 'LinkedIn', href: LINKEDIN, external: true },
+  { label: 'GitHub', href: GITHUB, external: true },
+  { label: 'About', href: '/about' },
 ]
 
 export default function SiteFooter() {
@@ -13,9 +14,13 @@ export default function SiteFooter() {
       <ul className="site-footer__links">
         {FOOTER_LINKS.map((link) => (
           <li key={link.label}>
-            <a href={link.href}>
-              {link.label}
-            </a>
+            {link.external ? (
+              <a href={link.href} target="_blank" rel="noreferrer">
+                {link.label}
+              </a>
+            ) : (
+              <Link to={link.href}>{link.label}</Link>
+            )}
           </li>
         ))}
       </ul>

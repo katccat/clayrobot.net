@@ -15,17 +15,20 @@ export default function FeaturedProjects({ projectKeys = [] }) {
       <div className="tile-grid">
         {projectList.map((project) => (
           <article className="tile" key={project.title}>
-            <a className="tile__link" href={project.href}>
-              <div className="tile__media">
-                <img src="/images/grid.png"></img>
-              </div>
+            <a className="tile__link no-animate" href={project.href}>
+              <div
+                className="tile__media"
+                style={{
+                  backgroundImage: `url(${project.image ?? "/images/grid.png"})`,
+                }}
+              ></div>
               <div className="tile__body">
                 <h3 className="tile__title">{project.title}</h3>
                 <p className="tile__desc">{project.description}</p>
               </div>
             </a>
             <a
-              className="tile__source"
+              className="tile__source no-animate"
               href={project.source}
               target="_blank"
               rel="noreferrer noopener"

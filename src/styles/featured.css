@@ -40,6 +40,7 @@
   display: flex;
   flex-direction: column;
   background: var(--bg);
+  overflow: hidden;
 }
 
 .tile__link {
@@ -49,24 +50,37 @@
 }
 
 .tile__media {
+  z-index: 0;
   /* aspect-ratio: 1; */
   overflow: hidden;
-  background: var(--inset);
+  background-color: var(--inset);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   display: flex;
+  height: 70%;
   align-items: flex-end;
+  transition: transform 120ms ease;
 }
 
 /* static image animates on hover (placeholder: the label drifts/zooms) */
-.tile:hover .tile__media::after {
-  animation-duration: 6s;
+.tile:hover .tile__media {
+  transform: scale(1.08);
 }
 
 .tile__body {
+  background-color: var(--bg);
+  z-index: 1;
   padding: 1rem 1rem 1.25rem;
   display: flex;
   flex-direction: column;
   gap: 0.35rem;
   flex: 1;
+}
+.tile:hover .tile__body {
+  --muted: var(--muted-inv);
+  color: var(--bg);
+  background-color: var(--fg);
 }
 
 .tile__title {
@@ -89,16 +103,17 @@
   right: 0;
   font-family: var(--font-head);
   font-weight: 600;
-  /* text-transform: uppercase; */
+  text-transform: uppercase;
   font-size: 0.72rem;
   letter-spacing: 0.04em;
   padding: 0.35rem 0.55rem;
   background: var(--bg);
-  border-left: var(--line-w) solid var(--line);
-  border-bottom: var(--line-w) solid var(--line);
+  opacity: 0.9;
+  transition: padding 120ms ease;
 }
 
 .tile__source:hover {
+  padding-right: 1rem;
   background: var(--fg);
   color: var(--bg);
 }
