@@ -11,7 +11,7 @@ import AboutPage from './AboutPage.jsx'
 function Home() {
   return (
     <>
-      <Splash />
+      {/* <Splash /> */}
       <main className="site-main">
         {/* <img src="/images/grid.webp" className="hero-image"></img> */}
         <div className="home-flex">
