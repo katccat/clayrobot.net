@@ -107,7 +107,7 @@ img {
   z-index: 1;
   align-self: center;
   margin: auto;
-
+  width: auto;
   max-width: min(550px, 90vw);
   min-width: 350px;
   height: auto;
@@ -154,10 +154,10 @@ section {
   }
   .companion-image--mobile {
     display: block;
-    max-height: 300px;
   }
   .companion-image {
     max-height: 320px;
+    
     min-width: revert;
     flex: revert;
   }
