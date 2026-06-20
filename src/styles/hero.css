@@ -8,10 +8,12 @@ html[data-theme='dark'] .hero-image {
   position: absolute;
 }
 .hero {
+  align-self: flex-start;
   position: relative;
   z-index: 1;
-  padding-block: clamp(20px, 5vw, 7rem) clamp(2rem, 5vw, 4rem);
+  padding-block: clamp(20px, 3vw, 7rem) clamp(2rem, 5vw, 4rem);
   max-width: 800px;
+  min-width: 350px;
   /* border-bottom: var(--line-w) solid var(--line); */
 }
 

@@ -11,21 +11,19 @@ export default function SiteNav({ theme, onToggleTheme }) {
         clayrobot
       </a>
       <div className="site-nav__right">
-        <ul className="site-nav__links">
+        <div className="site-nav__links">
           {LINKS.map((link) => (
-            <li key={link.href}>
-              <a href={link.href}>{link.label}</a>
-            </li>
+            <a href={link.href}>{link.label}</a>
           ))}
-        </ul>
-        <button
+        </div>
+        {/* <button
           type="button"
           className="theme-toggle"
           onClick={onToggleTheme}
           aria-label="Toggle color theme"
         >
           {theme === 'dark' ? 'Light' : 'Dark'}
-        </button>
+        </button> */}
       </div>
     </nav>
   )

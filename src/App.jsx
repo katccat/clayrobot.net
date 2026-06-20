@@ -16,7 +16,11 @@ export default function App() {
       <div className="site-nav-spacer" />
       <main className="site-main">
         {/* <img src="/images/grid.webp" className="hero-image"></img> */}
+        <div className="home-flex">
         <Hero />
+        <img src="/images/robotma/robotma-halftone-shadow.png" className='companion-image companion-image--desktop' />
+        <img src="/images/robotma/robotma-halftone-bg.png" className='companion-image companion-image--mobile' />
+        </div>
         <FeaturedProjects projectKeys={['inar']} />
         {/* <ArtStation /> */}
       </main>

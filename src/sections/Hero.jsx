@@ -1,17 +1,17 @@
 import { LINKEDIN } from '../links'
 
 const INDEX = [
-  { label: 'About', href: '/about/', n: '01' },
-  { label: 'Games', href: '/projects/', n: '02' },
-  { label: 'Posts', href: '/posts/', n: '03' },
-  { label: 'Contact', href: LINKEDIN, n: '04' },
+  { label: 'About', href: '/about/' },
+  { label: 'Games', href: '/projects/' },
+  { label: 'Posts', href: '/posts/' },
+  { label: 'Contact', href: LINKEDIN },
 ]
 
 export default function Hero() {
   return (
     <section className="hero">
-        <h1 className="hero__wordmark" data-matrix>
-          clay<wbr/>robot<wbr/>.net
+        <h1 className="hero__wordmark">
+          CLAY<wbr/>ROBOT<wbr/>.net
         </h1>
         <ul className="hero__index">
           {INDEX.map((item) => (
@@ -21,7 +21,7 @@ export default function Hero() {
                 <span className="hero__index-meta">
                   {/* .{item.n} */}
                   <span className="hero__index-arrow" aria-hidden="true">
-                    <img src="/images/arrow2.svg"/>
+                    <img src="/images/arrow.svg"/>
                   </span>
                 </span>
               </a>
