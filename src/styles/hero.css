@@ -6,12 +6,13 @@ html[data-theme='dark'] .hero-image {
   z-index: 0;
   width: 100%;
   position: absolute;
+  padding: calc(-1 * var(--pad));
 }
 .hero {
   align-self: flex-start;
   position: relative;
   z-index: 1;
-  padding-block: clamp(20px, 3vw, 7rem) clamp(2rem, 5vw, 4rem);
+  padding-bottom: var(--pad);
   max-width: 800px;
   min-width: min(600px,100%);
   /* border-bottom: var(--line-w) solid var(--line); */

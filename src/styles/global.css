@@ -4,6 +4,7 @@
 @import "./featured.css";
 @import "./footer.css";
 @import "./splash.css";
+@import "./about.css";
 
 @font-face {
   font-family: 'Matroska';
@@ -14,7 +15,7 @@
 /* ----- theme tokens ----- */
 :root {
   --font-display: 'Matroska', 'Archivo', sans-serif;
-  --font-head: 'Archivo', 'Arial Narrow', Arial, sans-serif;
+  --font-head: 'Archivo', Arial, sans-serif;
   --font-body: Arial, Helvetica, 'Helvetica Neue', sans-serif;
 
   --maxw: 1200px;
@@ -29,6 +30,7 @@
 }
 
 html[data-theme='dark'] {
+  --bg2: rgb(45, 45, 45);
   --bg: #000000;
   --fg: #ffffff;
   --muted: var(--muted-light);
@@ -42,6 +44,7 @@ html[data-theme='dark'] {
 }
 
 html[data-theme='light'] {
+  --bg2: rgb(237, 237, 237);
   --bg: #ffffff;
   --fg: #000000;
   --muted: var(--muted-dark);
@@ -89,6 +92,8 @@ body {
 }
 .site-main {
   flex: 1;
+  padding-block: clamp(20px, 3vw, 7rem) clamp(2rem, 5vw, 4rem);
+  padding-inline: var(--pad);
 }
 img {
   user-select: none;
@@ -103,10 +108,21 @@ img {
   align-items: center;
   /* border-bottom: var(--line-w) dashed var(--fg); */
 }
+/* h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 900;
+  line-height: 0.86;
+  letter-spacing: 0.005em;
+} */
+ p {
+  font-family: var(--font-body);
+  font-size: 1.2rem;
+ }
 .companion-image {
   z-index: 1;
   align-self: center;
   margin: auto;
+  
   width: auto;
   max-width: min(550px, 90vw);
   min-width: 350px;
@@ -114,8 +130,12 @@ img {
   flex: 1 1 350px;
   /* transform: rotate(-45deg); */
 }
+.companion-image--desktop {
+  margin-top: calc(-1 * var(--pad));
+}
 .companion-image--mobile {
   display: none;
+  padding-bottom: var(--pad);
 }
 
 a:not(.no-animate) {
@@ -124,13 +144,14 @@ a:not(.no-animate) {
 a:hover {
   background: var(--fg);
   color: var(--bg);
+  cursor: pointer;
 }
 a:not(.no-animate):hover {
   padding-inline: 0.3rem;
 }
 
 section {
-  padding-inline: var(--pad);
+  /* padding-inline: var(--pad); */
 }
 
 /* ============================================================
@@ -151,6 +172,7 @@ section {
 
   .companion-image--desktop {
     display: none;
+    margin-top: calc(-1 * var(--pad));
   }
   .companion-image--mobile {
     display: block;

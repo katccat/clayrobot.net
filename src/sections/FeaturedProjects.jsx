@@ -9,15 +9,12 @@ export default function FeaturedProjects({ projectKeys = [] }) {
   
   return (
     <section className="featured" id="featured">
-      <header className="section-head">
-        <h2 className="section-head__title">Featured Projects</h2>
-      </header>
       <div className="tile-grid">
         {projectList.map((project) => (
           <article className="tile" key={project.title}>
             <a className="tile__link no-animate" href={project.href}>
               <div
-                className="tile__media"
+                className={'tile__media' + (project.pixelatedImage ? ' pixelated' : '')}
                 style={{
                   backgroundImage: `url(${project.image ?? "/images/grid.png"})`,
                 }}
@@ -27,7 +24,8 @@ export default function FeaturedProjects({ projectKeys = [] }) {
                 <p className="tile__desc">{project.description}</p>
               </div>
             </a>
-            <a
+            {(project.source) && (
+              <a
               className="tile__source no-animate"
               href={project.source}
               target="_blank"
@@ -36,6 +34,8 @@ export default function FeaturedProjects({ projectKeys = [] }) {
             >
               GitHub
             </a>
+            )}
+            
           </article>
         ))}
       </div>
