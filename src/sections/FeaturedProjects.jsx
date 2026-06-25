@@ -16,7 +16,7 @@ export default function FeaturedProjects({ projectKeys = [] }) {
               <div
                 className={'tile__media' + (project.pixelatedImage ? ' pixelated' : '')}
                 style={{
-                  backgroundImage: `url(${project.image ?? "/images/grid.png"})`,
+                  backgroundImage: `url(${project.image ?? "/images/placeholder.webp"})`,
                 }}
               ></div>
               <div className="tile__body">

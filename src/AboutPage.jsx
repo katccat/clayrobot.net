@@ -31,7 +31,7 @@ export default function AboutPage() {
           <IndexList index={INDEX} />
         </div>
         <div className='about__footer'>
-          <Img className='about__footer-image' alt='Me and a baby goat' title='Me and my friend' src="/images/goat2.webp"></Img>
+          <Img className='about__footer-image' alt='Me and a baby goat' title='Me and my friend' src="/images/goat.webp"></Img>
         </div>
 
       </section>
