@@ -1,8 +1,8 @@
-import { LINKEDIN } from '../links'
-import { GITHUB } from '../links'
-import LinkList from '../LinkList'
+import { LINKEDIN } from '../links.js'
+import { GITHUB } from '../links.js'
+import LinkList from '../components/LinkList.jsx'
 import Img from '../Img.jsx'
-import FeaturedProjects from './FeaturedProjects.jsx'
+import FeaturedProjects from '../components/FeaturedProjects.jsx'
 // import Splash from '../components/Splash.jsx'
 // import ArtStation from './ArtStation.jsx'
 

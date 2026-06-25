@@ -1,11 +1,11 @@
 import { projects } from '../projects'
 
-export default function FeaturedProjects({ projectKeys = [] }) {
-  const projectList = projectKeys.length > 0
+export default function FeaturedProjects({ projectKeys = [], gamesOnly = false }) {
+  const projectList = (projectKeys.length > 0
     ? projectKeys.map(key => projects.get(key)).filter(Boolean)
-    : projects.getAll();
-  // console.log(projectKeys);
-  console.log(projectList);
+    : projects.getAll())
+    .filter(project => !gamesOnly || project.game === true);
+  const PLACEHOLDER_IMAGE = "/images/placeholder.webp";
   
   return (
     <section className="featured" id="featured">
@@ -14,9 +14,10 @@ export default function FeaturedProjects({ projectKeys = [] }) {
           <article className="tile" key={project.title}>
             <a className="tile__link no-animate" href={project.href}>
               <div
-                className={'tile__media' + (project.pixelatedImage ? ' pixelated' : '')}
+                className='tile__media'
                 style={{
-                  backgroundImage: `url(${project.image ?? "/images/placeholder.webp"})`,
+                  backgroundImage: `url(${project.image ?? PLACEHOLDER_IMAGE})`,
+                  ...(project.pixelatedImage && {imageRendering: 'pixelated'})
                 }}
               ></div>
               <div className="tile__body">
@@ -24,7 +25,7 @@ export default function FeaturedProjects({ projectKeys = [] }) {
                 <p className="tile__desc">{project.description}</p>
               </div>
             </a>
-            {(project.source) && (
+            {(project.source && !gamesOnly) && (
               <a
               className="tile__source no-animate"
               href={project.source}

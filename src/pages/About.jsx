@@ -1,6 +1,6 @@
-import { GITHUB, LINKEDIN, DONATE } from './links'
-import LinkList from './LinkList'
-import Img from './Img.jsx'
+import { GITHUB, LINKEDIN, DONATE } from '../links.js'
+import LinkList from '../components/LinkList.jsx'
+import Img from '../Img.jsx'
 
 const INDEX = [
   { label: 'Resume', href: '/resume.pdf', external: true },
@@ -9,7 +9,7 @@ const INDEX = [
   { label: 'Donate', href: DONATE, external: true },
 ]
 
-export default function AboutPage() {
+export default function About() {
   return (
     <main className="site-main">
       <section className="about">

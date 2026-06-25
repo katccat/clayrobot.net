@@ -26,19 +26,19 @@ const PROJECTS = {
     source: 'https://github.com/katccat/asteroids100',
     game: true,
   },
-  "pong": {
-    title: 'Classic Pong',
-    image: '/images/projects/pong.png',
-    href: '/games/pong',
-    game: true,
-  },
   "cfi": {
     title: 'damonwelber.com',
     description: 'A portfolio site designed and built for a working CFI.',
     href: 'https://damonwelber.com',
     source: 'https://github.com/katccat/CFI-Website',
     game: false,
-  }
+  },
+  "pong": {
+    title: 'Classic Pong',
+    image: '/images/projects/pong.png',
+    href: '/games/pong',
+    game: true,
+  },
 }
 export const projects = {
   get(key) {

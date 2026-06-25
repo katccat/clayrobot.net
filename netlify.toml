@@ -1,9 +1,4 @@
 [[redirects]]
-  from = "/games"
-  to = "/projects"
-  status = 301
-
-[[redirects]]
   from = "/recaptcha"
   to = "/games/recaptcha"
   status = 301

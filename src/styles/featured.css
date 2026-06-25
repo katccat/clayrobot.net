@@ -21,22 +21,21 @@
 /* ============================================================
    featured projects — seamless tile grid
    ============================================================ */
-.featured {
-  padding-bottom: clamp(2rem, 6vw, 4rem);
-}
 
 .tile-grid {
   display: grid;
   /* word-break: break-all; */
   grid-template-columns: repeat(3, 1fr);
-  /* max-width: 800px; */
+
+  max-width: min(100%, 1000px);
+  /* width: auto; */
   /* seamless: a single shared border via collapsing offsets */
-  gap: 4px;
-  /* background-color: var(--bg2); */
+  gap: 0.3rem;
 }
 
 .tile {
-  aspect-ratio: 1 / 1;
+  container-type: size;
+  aspect-ratio: 1;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -63,9 +62,6 @@
   align-items: flex-end;
   transition: transform 240ms ease;
 }
-.pixelated {
-  image-rendering: pixelated;
-}
 
 /* static image animates on hover (placeholder: the label drifts/zooms) */
 .tile:hover .tile__media {
@@ -91,13 +87,13 @@
   font-family: var(--font-head);
   font-weight: 700;
   /* text-transform: uppercase; */
-  font-size: 1.4rem;
-  letter-spacing: 0.01em;
+  font-size: 4.5cqi;
+  letter-spacing: 0.045cqi;
 }
 
 .tile__desc {
   color: var(--muted);
-  font-size: 0.95rem;
+  font-size: 4cqi;
   max-width: 38ch;
 }
 
@@ -108,8 +104,8 @@
   font-family: var(--font-head);
   font-weight: 600;
   text-transform: uppercase;
-  font-size: 0.72rem;
-  letter-spacing: 0.04em;
+  font-size: 3.8cqi;
+  letter-spacing: 0.152cqi;
   padding: 0.35rem 0.55rem;
   background: var(--bg);
   transition: padding 120ms ease;

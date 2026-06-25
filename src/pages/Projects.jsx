@@ -1,5 +1,5 @@
 // import GITHUB from './links'
-import FeaturedProjects from "./sections/FeaturedProjects"
+import FeaturedProjects from "../components/FeaturedProjects"
 
 export default function Projects() {
   return (

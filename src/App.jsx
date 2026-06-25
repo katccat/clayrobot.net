@@ -3,11 +3,12 @@ import { Routes, Route, Outlet, useLocation } from 'react-router-dom'
 import { useTheme } from './useTheme.js'
 import SiteNav from './components/SiteNav.jsx'
 import SiteFooter from './components/SiteFooter.jsx'
-import Home from './sections/Home.jsx'
-import AboutPage from './AboutPage.jsx'
-import Projects from './Projects.jsx'
-import Posts from './Posts.jsx'
-import NotFound from './NotFound.jsx'
+import Home from './pages/Home.jsx'
+import About from './pages/About.jsx'
+import Projects from './pages/Projects.jsx'
+import Games from './pages/Games.jsx'
+import Posts from './pages/Posts.jsx'
+import NotFound from './pages/NotFound.jsx'
 
 function ScrollToTop() {
   const { pathname } = useLocation()
@@ -39,11 +40,11 @@ export default function App() {
       <Route element={<Layout theme={theme} toggle={toggle} />}>
         <Route path="/" element={<Home />} />
         <Route path="/projects" element={<Projects />} />
+        <Route path="/games" element={<Games />} />
         <Route path="/posts" element={<Posts />} />
-        <Route path="/about" element={<AboutPage />} />
+        <Route path="/about" element={<About />} />
         <Route path="*" element={<NotFound />} />
       </Route>
-      
     </Routes>
   )
 }

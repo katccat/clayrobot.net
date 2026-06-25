@@ -1,4 +1,4 @@
-import Img from './Img.jsx'
+import Img from '../Img.jsx'
 
 export default function AboutPage() {
   return (
