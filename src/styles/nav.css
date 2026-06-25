@@ -1,7 +1,7 @@
 .site-nav-spacer {
   position: relative;
   height: var(--nav-h);
-  /* background-color: var(--fg); */
+  
 }
 
 .site-nav {
@@ -21,11 +21,16 @@
   color: var(--fg);
   background: var(--bg);
 }
-html[data-theme='light'] .site-nav{
-  --bg: var(--accent);
-  --fg: white;
-  /* backdrop-filter: invert(1) blur(1px);
-  background: rgb(from var(--bg) r g b / 0.92); */
+html[data-theme='light'] {
+  .site-nav-spacer {
+    /* background-color: var(--fg); */
+  }
+  .site-nav {
+    --bg: var(--accent);
+    --fg: white;
+    backdrop-filter: invert(1) blur(1px);
+    background: rgb(from var(--bg) r g b / 0.92);
+  }
 }
 
 .site-nav__logo {

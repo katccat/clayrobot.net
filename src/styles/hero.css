@@ -55,7 +55,6 @@ html[data-theme='dark'] .hero-image {
 }
 
 .hero__index-item a:hover {
-  background: var(--fg);
   color: var(--bg);
   padding-inline: 0.6rem !important;
 }

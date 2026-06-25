@@ -18,6 +18,15 @@
     /* border: 10px solid var(--fg); */
     /* border-radius: 2%; */
 }
+.about__footer {
+    flex-basis: 100%;
+    display: flex;
+    justify-content: center;
+}
+.about__footer-image {
+    width: min(100%, 520px);
+    height: auto;
+}
 html[data-theme='dark'] .about__img--light {
     display: none;
 }
@@ -42,8 +51,9 @@ html[data-theme='light'] .about__img--dark {
     /* text-shadow: var(--glow); */
     font-size: min(14vw, 80px);
     text-transform: lowercase;
-    background-color: var(--fg);
+    background-color: var(--accent);
     color: var(--bg);
+    max-width: min(100%, 800px);
 }
 .about__subheading {
     /* text-shadow: var(--glow); */

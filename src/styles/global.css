@@ -30,6 +30,7 @@
 }
 
 html[data-theme='dark'] {
+  --accent: white;
   --bg2: rgb(45, 45, 45);
   --bg: #000000;
   --fg: #ffffff;
@@ -44,6 +45,7 @@ html[data-theme='dark'] {
 }
 
 html[data-theme='light'] {
+  --accent: #e94116;
   --bg2: rgb(237, 237, 237);
   --bg: #ffffff;
   --fg: #000000;

@@ -3,6 +3,8 @@ technology stack:
 - react
 - am already using netlify to host
 
+001f69
+
 Aesthetic: Digital brutalist with black background and prominent use of Matroska font.
 A personal website that presents like a developer group or firm (CLAYROBOT)
 Major headers like site logo or splash elements use matroska, minor headers use a font like pepi bold or lazare grotesk (ideally a font that is free use and free), and text is either something like google sans or arial
@@ -12,7 +14,6 @@ Pages:
 		when loaded into, has a brief animated splash screen with rows of large text going down (unused/inspo/splash1.png)
 		about button
 		featured projects
-		artstation
 	about
 		information about site with FAQ
 		bio about me

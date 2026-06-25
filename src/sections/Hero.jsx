@@ -4,7 +4,7 @@ import IndexList from '../IndexList'
 
 const INDEX = [
   { label: 'About', href: '/about' },
-  { label: 'Games', href: '/projects/' },
+  { label: 'Projects', href: '/projects/' },
   { label: 'Posts', href: '/posts' },
   { label: 'GitHub', href: GITHUB, external: true },
 ]
