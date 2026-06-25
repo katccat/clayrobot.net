@@ -8,8 +8,18 @@
 
 @font-face {
   font-family: 'Matroska';
-  src: url('/fonts/Matroska-RppG6.ttf') format('truetype');
+  src: url('/fonts/Matroska-RppG6.woff2') format('woff2'),
+       url('/fonts/Matroska-RppG6.ttf') format('truetype');
   font-weight: 400 900;
+  font-display: block;
+}
+
+@font-face {
+  font-family: 'Archivo';
+  src: url('/fonts/Archivo-Variable.woff2') format('woff2'),
+       url('/fonts/Archivo-Variable.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
   font-display: swap;
 }
 /* ----- theme tokens ----- */
@@ -145,25 +155,44 @@ mark {
 }
 
 a:not(.no-animate) {
-  transition: padding-inline 120ms ease;
+  position: relative;
+  isolation: isolate;
 }
 a:hover {
   background: var(--fg);
   color: var(--bg);
   cursor: pointer;
 }
-a:not(.no-animate):hover {
-  padding-inline: 0.3rem;
+/* The highlight extends past the text on an out-of-flow pseudo-element, so the
+   link's own box never changes width and neighboring links never reflow. The
+   instant text-width fill comes from a:hover above; the pseudo grows the edges
+   0.3rem outward from there. The .no-animate links (e.g. hero index items) opt
+   out and keep their own padding-grow behavior (see hero.css). */
+a:not(.no-animate)::before {
+  content: "";
+  position: absolute;
+  inset-block: 0;
+  inset-inline: 0;
+  z-index: -1;
+  background: var(--fg);
+  opacity: 0;
+  transition: inset-inline 120ms ease;
 }
-
-section {
-  /* padding-inline: var(--pad); */
+a:not(.no-animate):hover::before {
+  inset-inline: -0.3rem;
+  opacity: 1;
 }
 
 /* ============================================================
    responsive
    ============================================================ */
 @media (max-width: 640px) {
+  .about__img {
+    max-height: 270px;
+    max-width: 290px;
+    object-fit: cover;
+    margin: auto;
+  }
   .tile-grid {
     grid-template-columns: 1fr;
   }

@@ -14,10 +14,10 @@ export default function AboutPage() {
                 width: 'min(512px, 100%)',
                 height: 'auto',
                 aspectRatio: '1',
+                marginBlock: '5px',
             }}
             alt='404 image'
         ></Img>
-        <br></br>
         <span className='about__subheading'>
             The requested resource was <mark>not found.</mark>
             {/* Qouth the raven, <mark>404.</mark> */}

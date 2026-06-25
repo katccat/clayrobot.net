@@ -52,6 +52,7 @@ html[data-theme='dark'] .hero-image {
   text-transform: lowercase;
   font-size: clamp(1.4rem, 4vw, 2.25rem);
   letter-spacing: 0.01em;
+  transition: padding-inline 120ms ease;
 }
 
 .hero__index-item a:hover {

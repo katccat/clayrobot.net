@@ -1,6 +1,6 @@
 import { LINKEDIN } from '../links'
 import { GITHUB } from '../links'
-import IndexList from '../IndexList'
+import LinkList from '../LinkList'
 import Img from '../Img.jsx'
 import FeaturedProjects from './FeaturedProjects.jsx'
 // import Splash from '../components/Splash.jsx'
@@ -24,7 +24,7 @@ export default function Home() {
             <h1 className="hero__wordmark">
               CLAY<br/>ROBOT<br/>.net
             </h1>
-            <IndexList index={INDEX} />
+            <LinkList index={INDEX} />
           </section>
           <Img src="/images/robotma/robotma-halftone-shadow.png" className='companion-image companion-image--desktop' />
           <Img src="/images/robotma/robotma-halftone-bg.png" className='companion-image companion-image--mobile' />

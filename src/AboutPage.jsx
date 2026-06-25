@@ -1,12 +1,12 @@
-import { GITHUB } from './links'
-import { LINKEDIN } from './links'
-import IndexList from './IndexList'
+import { GITHUB, LINKEDIN, DONATE } from './links'
+import LinkList from './LinkList'
 import Img from './Img.jsx'
 
 const INDEX = [
   { label: 'Resume', href: '/resume.pdf', external: true },
   { label: 'LinkedIn', href: LINKEDIN, external: true },
   { label: 'GitHub', href: GITHUB, external: true },
+  { label: 'Donate', href: DONATE, external: true },
 ]
 
 export default function AboutPage() {
@@ -28,7 +28,7 @@ export default function AboutPage() {
           <p>
             I like movies, and anyone who knows me can attest I have logged every movie I've ever seen and I catch most new releases in theaters. Some of my favorite films are Memento and The Matrix. I also like retro gaming, with my favorite console being the PS2.
           </p>
-          <IndexList index={INDEX} />
+          <LinkList index={INDEX} />
         </div>
         <div className='about__footer'>
           <Img className='about__footer-image' alt='Me and a baby goat' title='Me and my friend' src="/images/goat.webp"></Img>

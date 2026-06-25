@@ -1,4 +1,5 @@
-import { Routes, Route, Outlet } from 'react-router-dom'
+import { useEffect } from 'react'
+import { Routes, Route, Outlet, useLocation } from 'react-router-dom'
 import { useTheme } from './useTheme.js'
 import SiteNav from './components/SiteNav.jsx'
 import SiteFooter from './components/SiteFooter.jsx'
@@ -8,9 +9,20 @@ import Projects from './Projects.jsx'
 import Posts from './Posts.jsx'
 import NotFound from './NotFound.jsx'
 
+function ScrollToTop() {
+  const { pathname } = useLocation()
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [pathname])
+
+  return null
+}
+
 function Layout({ theme, toggle }) {
   return (
     <>
+      <ScrollToTop />
       <SiteNav theme={theme} onToggleTheme={toggle} />
       <div className="site-nav-spacer" />
       <Outlet />

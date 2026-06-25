@@ -55,15 +55,17 @@ html[data-theme='light'] {
   gap: clamp(1rem, 2.5vw, 2rem);
   font-family: var(--font-head);
   font-weight: 500;
-  /* text-transform: uppercase; */
-  /* text-transform: lowercase; */
-  
   letter-spacing: 0.02em;
 }
-
-.site-nav__links a:hover {
-  background: var(--fg);
+/* The hover highlight (no-shift pseudo-element) is handled globally in
+   global.css. The active page link reuses that same pseudo-element so the
+   current route stays highlighted without hovering. */
+.site-nav__links a.active {
   color: var(--bg);
+}
+.site-nav__links a.active::before {
+  inset-inline: -0.3rem;
+  opacity: 1;
 }
 
 .theme-toggle {

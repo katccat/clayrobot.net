@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 const LINKS = [
   { label: 'Projects', href: '/projects' },
@@ -15,7 +16,7 @@ export default function SiteNav({ theme, onToggleTheme }) {
       <div className="site-nav__right">
         <div className="site-nav__links">
           {LINKS.map((link) => (
-            <Link key={link.label} to={link.href}>{link.label}</Link>
+            <NavLink key={link.label} to={link.href}>{link.label}</NavLink>
           ))}
         </div>
         <button
