@@ -6,9 +6,9 @@
   font-family: var(--font-head);
   font-weight: 800;
   text-transform: uppercase;
-  font-size: clamp(1.8rem, 5vw, 3rem);
+  font-size: clamp(1.6rem, 5vw, 3rem);
   letter-spacing: 0.01em;
-  margin-bottom: 5px;
+  margin-bottom: 0.5rem;
 }
 
 /* ============================================================

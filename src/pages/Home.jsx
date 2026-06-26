@@ -1,8 +1,9 @@
-import { LINKEDIN } from '../links.js'
-import { GITHUB } from '../links.js'
+import { LINKEDIN } from '../consts.js'
+import { GITHUB } from '../consts.js'
 import LinkList from '../components/LinkList.jsx'
 import Img from '../Img.jsx'
 import FeaturedProjects from '../components/FeaturedProjects.jsx'
+import { useMediaQuery } from '../useMediaQuery.js'
 // import Splash from '../components/Splash.jsx'
 // import ArtStation from './ArtStation.jsx'
 
@@ -14,6 +15,7 @@ const INDEX = [
 ]
 
 export default function Home() {
+  const isMobile = useMediaQuery('(max-width: 640px)')
   return (
     <>
       {/* <Splash /> */}
@@ -27,8 +29,11 @@ export default function Home() {
             </h1>
             <LinkList index={INDEX} />
           </section>
-          <Img src="/images/robotma/robotma-halftone.png" className='companion-image companion-image--desktop' />
-          <Img src="/images/robotma/robotma-halftone-bg.png" className='companion-image companion-image--mobile' />
+          {isMobile ? (
+            <Img src="/images/robotma/robotma-halftone-bg.png" className='companion-image companion-image--mobile' fetchpriority="high" />
+          ) : (
+            <Img src="/images/robotma/robotma-halftone.png" className='companion-image companion-image--desktop' fetchpriority="high" />
+          )}
         </div>
         <hr></hr>
         <header>

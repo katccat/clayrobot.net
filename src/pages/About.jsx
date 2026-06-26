@@ -1,4 +1,5 @@
-import { GITHUB, LINKEDIN, DONATE } from '../links.js'
+import { useOutletContext } from 'react-router-dom'
+import { GITHUB, LINKEDIN, DONATE } from '../consts.js'
 import LinkList from '../components/LinkList.jsx'
 import Img from '../Img.jsx'
 
@@ -10,12 +11,13 @@ const INDEX = [
 ]
 
 export default function About() {
+  const { theme } = useOutletContext()
+  const src = theme === 'dark' ? '/images/dotblue.png' : '/images/dotorange.png'
   return (
     <main className="site-main">
       <title>CLAYROBOT about</title>
       <section className="about">
-        <Img className="about__img about__img--dark" src="/images/dotblue.png" />
-        <Img className="about__img about__img--light" src="/images/dotorange.png" />
+        <Img className="about__img" src={src} fetchpriority="high" />
         <div className='about__text'>
           <h1 className='about__title'>About</h1>
           <p>

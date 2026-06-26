@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { GITHUB, LINKEDIN, DONATE } from '../links'
+import { GITHUB, LINKEDIN, DONATE } from '../consts'
 
 const FOOTER_LINKS = [
   { label: 'LinkedIn', href: LINKEDIN, external: true },

@@ -1,3 +1,5 @@
+export const SITE_NAME = 'CLAYROBOT'
+export const PLACEHOLDER_IMG = '/images/placeholder.webp'
 export const GITHUB = 'https://github.com/katccat'
 export const LINKEDIN = 'https://www.linkedin.com/in/khan-lagemann-52312a305/'
 export const ARTSTATION = 'https://clayrobot.artstation.com'

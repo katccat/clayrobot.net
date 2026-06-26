@@ -17,8 +17,14 @@ html[data-theme='dark'] .hero-image {
   min-width: min(600px,100%);
   /* border-bottom: var(--line-w) solid var(--line); */
 }
+.hero img {
+  max-width: 450px;
+  /* justify-self: center; */
+  z-index: 0;
+}
 
 .hero__wordmark {
+  z-index: 1;
   /* color: var(--bg); */
   
   font-family: var(--font-display);
@@ -115,7 +121,4 @@ html[data-theme='dark'] .hero__index-item:hover .hero__index-arrow img {
 }
 .companion-image--desktop {
   margin-top: calc(-0.8 * var(--padding-top));
-}
-.companion-image--mobile {
-  display: none;
 }

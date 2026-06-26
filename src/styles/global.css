@@ -99,11 +99,14 @@ body {
    layout shell
    ============================================================ */
 #root {
+  min-height: 100vh;
   min-height: 100dvh;
   display: flex;
   flex-direction: column;
 }
 .site-main {
+  display: flex;
+  flex-direction: column;
   flex: 1;
   padding-block: var(--padding-top) clamp(2rem, 5vw, 4rem);
   padding-inline: var(--pad);
@@ -190,15 +193,8 @@ a:not(.no-animate):hover::before {
     --glow: 0 0 2px #000000;
   }
 
-  .companion-image--desktop {
-    display: none;
-    margin-top: calc(-1 * var(--pad));
-  }
-  .companion-image--mobile {
-    display: block;
-  }
   .companion-image {
-    max-height: 320px;
+    max-height: 350px;
     min-width: revert;
     flex: revert;
   }

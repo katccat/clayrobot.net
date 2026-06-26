@@ -1,11 +1,11 @@
 import { projects } from '../projects'
+import { PLACEHOLDER_IMG } from '../consts';
 
 export default function FeaturedProjects({ projectKeys = [], gamesOnly = false }) {
   const projectList = (projectKeys.length > 0
     ? projectKeys.map(key => projects.get(key)).filter(Boolean)
     : projects.getAll())
     .filter(project => !gamesOnly || project.game === true);
-  const PLACEHOLDER_IMAGE = "/images/placeholder.webp";
   
   return (
     <section className="featured" id="featured">
@@ -16,7 +16,7 @@ export default function FeaturedProjects({ projectKeys = [], gamesOnly = false }
               <div
                 className='tile__media'
                 style={{
-                  backgroundImage: `url(${project.image ?? PLACEHOLDER_IMAGE})`,
+                  backgroundImage: `url(${project.image ?? PLACEHOLDER_IMG})`,
                   ...(project.pixelatedImage && {imageRendering: 'pixelated'})
                 }}
               ></div>

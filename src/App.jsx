@@ -7,7 +7,7 @@ import Home from './pages/Home.jsx'
 import About from './pages/About.jsx'
 import Projects from './pages/Projects.jsx'
 import Games from './pages/Games.jsx'
-import Posts from './pages/Posts.jsx'
+import ComingSoon from './pages/ComingSoon.jsx'
 import NotFound from './pages/NotFound.jsx'
 
 const DEFAULT_TITLE = 'CLAYROBOT'
@@ -37,7 +37,7 @@ function Layout({ theme, toggle }) {
       <ScrollToTop />
       <SiteNav theme={theme} onToggleTheme={toggle} />
       <div className="site-nav-spacer" />
-      <Outlet />
+      <Outlet context={{ theme }} />
       <SiteFooter />
     </>
   )
@@ -52,7 +52,7 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/games" element={<Games />} />
-        <Route path="/posts" element={<Posts />} />
+        <Route path="/posts" element={<ComingSoon />} />
         <Route path="/about" element={<About />} />
         <Route path="*" element={<NotFound />} />
       </Route>
