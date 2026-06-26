@@ -1,11 +1,10 @@
 import { Link } from 'react-router-dom'
-import { GITHUB, LINKEDIN, DONATE } from '../consts'
+import { GITHUB, LINKEDIN } from '../consts'
 
 const FOOTER_LINKS = [
   { label: 'LinkedIn', href: LINKEDIN, external: true },
   { label: 'GitHub', href: GITHUB, external: true },
   { label: 'About', href: '/about' },
-  { label: 'Donate', href: DONATE, external: true },
 ]
 
 export default function SiteFooter() {

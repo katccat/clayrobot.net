@@ -34,7 +34,7 @@
     flex: 1 1 350px;
     min-width: 350px;
     max-width: 700px;
-    gap: 1rem;
+    gap: 0.9rem;
     flex-direction: column;
 }
 .about__text p {
@@ -56,7 +56,7 @@
     font-family: var(--font-head);
     font-weight: 800;
     text-transform: lowercase;
-    font-size: clamp(1.8rem, 5vw, 3rem);
+    font-size: clamp(2rem, 5vw, 3rem);
     letter-spacing: 0.01em;
 }
 .about__buttons {

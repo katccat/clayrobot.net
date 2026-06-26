@@ -31,7 +31,7 @@ html[data-theme='dark'] .hero-image {
   font-weight: 900;
   line-height: 0.86;
   /* font-size: clamp(3.5rem, 19vw, 16rem); */
-  font-size: min(14vw, 130px);
+  font-size: clamp(3.5rem, 10vw, 125px);
   letter-spacing: 0.005em;
   text-shadow: var(--glow);
 }
@@ -39,7 +39,7 @@ html[data-theme='dark'] .hero-image {
 .hero__index {
   margin-top: clamp(2rem, 5vw, 3.5rem);
   border-top: var(--line-w) solid var(--line);
-  max-width: 640px;
+  max-width: min(100%, 640px);
 }
 
 .hero__index-item {
@@ -100,23 +100,23 @@ html[data-theme='dark'] .hero__index-item:hover .hero__index-arrow img {
 }
 
 .home-flex {
-  width: 100%;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  align-items: center;
+  /* justify-content: center; */
 }
 
 .companion-image {
   z-index: 1;
   align-self: center;
+  justify-self: center;
   margin-inline: auto;
   width: auto;
-  max-width: min(550px, 90vw);
-  min-width: 350px;
   height: auto;
-  flex: 1 1 350px;
+  min-width: 400px;
+  flex: 1 1 400px;
 }
 .companion-image--desktop {
   margin-top: calc(-0.8 * var(--padding-top));
+  max-width: min(550px, 50vw);
 }

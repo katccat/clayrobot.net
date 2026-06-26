@@ -1,9 +1,10 @@
+import { INAR } from "./consts";
 const PROJECTS = {
   "inar": {
     title: "I'm not a Robot",
     description: 'A memory match game featuring trending images from the web for the tiles. Now on iOS.',
     image: '/images/projects/inar.webp',
-    href: '/games/recaptcha',
+    href: INAR,
     source: 'https://github.com/katccat/daily-trends-memory-game',
     tags: ['REST APIs', 'Google Trends', 'Node.js', 'JavaScript', 'Vite', 'React'],
     game: true,

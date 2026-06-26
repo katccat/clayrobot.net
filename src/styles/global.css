@@ -88,7 +88,6 @@ body {
   text-rendering: optimizeLegibility;
   display: flex;
   flex-direction: column;
-  overflow-x: hidden;
 }
 body, #root {
   min-height: 100vh;
@@ -145,7 +144,7 @@ hr {
   margin-inline: calc(-1 * var(--pad));
 }
 hr.no-space {
-  margin-block: 0;
+  margin: 0;
 }
 
 a:not(.no-animate) {
@@ -201,7 +200,8 @@ a:not(.no-animate):hover::before {
   }
 
   .companion-image {
-    max-height: 350px;
+    /* max-height: 350px; */
+    max-width: min(90%, 400px);
     min-width: revert;
     flex: revert;
   }
