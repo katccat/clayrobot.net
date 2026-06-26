@@ -27,13 +27,15 @@ const PROJECTS = {
     source: 'https://github.com/katccat/asteroids100',
     game: true,
   },
-  // "clayrobot": {
-  //   title: 'clayrobot.net',
-  //   description: 'My website written in React with a Node.js backend.',
-  //   tags: ['React', 'Node.js', 'Vite', 'Graphic Design'],
-  //   source: 'https://github.com/katccat/clayrobot.net',
-  //   game: false,
-  // },
+  "clayrobot": {
+    title: 'clayrobot.net',
+    description: 'React SPA website with a Node.js backend.',
+    image: '/images/projects/clayrobot-mosaic.webp',
+    pixelatedImage: true,
+    tags: ['React', 'Node.js', 'Vite', 'Graphic Design'],
+    source: 'https://github.com/katccat/clayrobot.net',
+    game: false,
+  },
   "cfi": {
     title: 'damonwelber.com',
     description: 'A portfolio site designed and built for a working CFI.',

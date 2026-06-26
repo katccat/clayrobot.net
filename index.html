@@ -5,6 +5,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+    <!-- Apply stored theme before first paint to avoid a flash -->
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem('clayrobot-theme')
+          if (stored === 'light' || stored === 'dark') {
+            document.documentElement.setAttribute('data-theme', stored)
+          }
+        } catch (e) {}
+      })()
+    </script>
+
     <!-- Primary meta -->
     <title>CLAYROBOT</title>
     <meta name="description" content="CLAYROBOT makes games that try something new. Home of I'm not a Robot." />
