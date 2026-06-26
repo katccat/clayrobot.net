@@ -15,7 +15,6 @@ export default function About() {
   const src = theme === 'dark' ? '/images/dotblue.png' : '/images/dotorange.png'
   return (
     <main className="site-main">
-      <title>CLAYROBOT about</title>
       <section className="about">
         <Img className="about__img" src={src} fetchpriority="high" />
         <div className='about__text'>
@@ -33,10 +32,11 @@ export default function About() {
           </p>
           <LinkList index={INDEX} />
         </div>
-        {/* <div className='about__footer'>
+        
+        <div className='about__footer'>
+          <hr></hr>
           <Img className='about__footer-image' alt='Me and a baby goat' title='Me and my friend' src="/images/goat.webp"></Img>
-        </div> */}
-
+        </div>
       </section>
     </main>
   )

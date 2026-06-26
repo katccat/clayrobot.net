@@ -20,7 +20,6 @@ export default function Home() {
     <>
       {/* <Splash /> */}
       <main className="site-main">
-        <title>CLAYROBOT</title>
         {/* <img src="/images/grid.webp" className="hero-image"></img> */}
         <div className="home-flex">
           <section className="hero">

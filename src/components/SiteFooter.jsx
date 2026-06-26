@@ -10,22 +10,24 @@ const FOOTER_LINKS = [
 
 export default function SiteFooter() {
   return (
-    <footer className="site-footer">
-      {/* <div className="site-footer__mark">CLAYROBOT</div> */}
-      <ul className="site-footer__links">
-        {FOOTER_LINKS.map((link) => (
-          <li key={link.label}>
-            {link.external ? (
-              <a href={link.href} target="_blank" rel="noreferrer">
-                {link.label}
-              </a>
-            ) : (
-              <Link to={link.href}>{link.label}</Link>
-            )}
-          </li>
-        ))}
-      </ul>
-      <p className="site-footer__meta">© Khan {new Date().getFullYear()}</p>
-    </footer>
+    <>
+      <hr className='no-space'></hr>
+      <footer className="site-footer">
+        <ul className="site-footer__links">
+          {FOOTER_LINKS.map((link) => (
+            <li key={link.label}>
+              {link.external ? (
+                <a href={link.href} rel="noopener noreferrer">
+                  {link.label}
+                </a>
+              ) : (
+                <Link to={link.href}>{link.label}</Link>
+              )}
+            </li>
+          ))}
+        </ul>
+        <p className="site-footer__meta">© Khan {new Date().getFullYear()}</p>
+      </footer>
+    </>
   )
 }

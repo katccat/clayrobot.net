@@ -29,8 +29,8 @@ export default function FeaturedProjects({ projectKeys = [], gamesOnly = false }
               <a
               className="tile__source no-animate"
               href={project.source}
-              target="_blank"
-              rel="noreferrer noopener"
+              // target="_blank"
+              rel="noopener noreferrer"
               aria-label={`${project.title} source on GitHub`}
             >
               GitHub

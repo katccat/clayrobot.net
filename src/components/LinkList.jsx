@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom'
 
-export default function LinkList({ index, showArrow = true }) {
+export default function LinkList({ index, showArrow = true, noLowerCase = false }) {
   return (
-    <ul className="hero__index">
+    <ul className={`hero__index${noLowerCase ? ' no-lowercase' : ''}`}>
       {index.map((item) => {
         const inner = (
           <>
@@ -19,7 +19,7 @@ export default function LinkList({ index, showArrow = true }) {
         return (
           <li className="hero__index-item" key={item.label}>
             {item.external ? (
-              <a href={item.href} className='no-animate' target="_blank" rel="noopener noreferrer">
+              <a href={item.href} className='no-animate' rel="noopener noreferrer">
                 {inner}
               </a>
             ) : (

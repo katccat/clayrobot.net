@@ -9,8 +9,9 @@ import Projects from './pages/Projects.jsx'
 import Games from './pages/Games.jsx'
 import ComingSoon from './pages/ComingSoon.jsx'
 import NotFound from './pages/NotFound.jsx'
+import Legal from './pages/Legal.jsx'
 
-const DEFAULT_TITLE = 'CLAYROBOT'
+const NOT_FOUND_TITLE = 'CLAYROBOT: 404'
 
 const TITLES = {
   '/': 'CLAYROBOT',
@@ -18,6 +19,7 @@ const TITLES = {
   '/projects': 'CLAYROBOT: projects',
   '/games': 'CLAYROBOT: games',
   '/posts': 'CLAYROBOT: posts',
+  '/legal': 'CLAYROBOT: legal',
 }
 
 function ScrollToTop() {
@@ -25,7 +27,7 @@ function ScrollToTop() {
 
   useEffect(() => {
     window.scrollTo(0, 0)
-    document.title = TITLES[pathname] ?? DEFAULT_TITLE
+    document.title = TITLES[pathname] ?? NOT_FOUND_TITLE
   }, [pathname])
 
   return null
@@ -36,7 +38,6 @@ function Layout({ theme, toggle }) {
     <>
       <ScrollToTop />
       <SiteNav theme={theme} onToggleTheme={toggle} />
-      <div className="site-nav-spacer" />
       <Outlet context={{ theme }} />
       <SiteFooter />
     </>
@@ -54,6 +55,7 @@ export default function App() {
         <Route path="/games" element={<Games />} />
         <Route path="/posts" element={<ComingSoon />} />
         <Route path="/about" element={<About />} />
+        <Route path="/legal" element={<Legal />} />
         <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>

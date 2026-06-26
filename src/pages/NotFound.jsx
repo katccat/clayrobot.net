@@ -1,6 +1,6 @@
 import Img from '../Img.jsx'
 
-export default function AboutPage() {
+export default function NotFound() {
   return (
     <div
     style={{
@@ -20,7 +20,6 @@ export default function AboutPage() {
         ></Img>
         <span className='about__subheading'>
             The requested resource was <mark>not found.</mark>
-            {/* Qouth the raven, <mark>404.</mark> */}
         </span>
     </div>
   )

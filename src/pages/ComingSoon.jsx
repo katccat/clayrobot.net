@@ -4,8 +4,10 @@ import { PLACEHOLDER_IMG } from '../consts.js'
 export default function ComingSoon() {
   return (
     <main className="site-main">
-        <h1 className='about__title'>Coming Soon</h1>
-        {/* <hr></hr> */}
+        {/* <h1 className='about__title'>Coming Soon</h1> */}
+        <span className='about__subheading'>
+            Coming <mark>soon.</mark>
+        </span>
         <div
           style={{
             flexGrow: '1',

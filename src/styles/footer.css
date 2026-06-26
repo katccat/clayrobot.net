@@ -1,5 +1,5 @@
 .site-footer {
-  /* border-top: var(--line-w) solid var(--line); */
+  /* border-top: 2px dashed var(--line); */
   padding: clamp(2rem, 5vw, 2rem) var(--pad);
   display: flex;
   flex-wrap: wrap;
