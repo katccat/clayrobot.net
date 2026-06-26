@@ -12,6 +12,7 @@ const INDEX = [
 export default function About() {
   return (
     <main className="site-main">
+      <title>CLAYROBOT about</title>
       <section className="about">
         <Img className="about__img about__img--dark" src="/images/dotblue.png" />
         <Img className="about__img about__img--light" src="/images/dotorange.png" />
@@ -30,9 +31,9 @@ export default function About() {
           </p>
           <LinkList index={INDEX} />
         </div>
-        <div className='about__footer'>
+        {/* <div className='about__footer'>
           <Img className='about__footer-image' alt='Me and a baby goat' title='Me and my friend' src="/images/goat.webp"></Img>
-        </div>
+        </div> */}
 
       </section>
     </main>

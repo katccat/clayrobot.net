@@ -1,6 +1,6 @@
 @import "./reset.css";
 @import "./nav.css";
-@import "./hero.css";
+@import "./home.css";
 @import "./featured.css";
 @import "./footer.css";
 @import "./splash.css";
@@ -27,9 +27,10 @@
   --font-display: 'Matroska', 'Archivo', sans-serif;
   --font-head: 'Archivo', Arial, sans-serif;
   --font-body: Arial, Helvetica, 'Helvetica Neue', sans-serif;
-
+  --mobilew: 640px;
   --maxw: 1200px;
   --pad: clamp(1.25rem, 4vw, 4rem);
+  --padding-top: clamp(20px, 3vw, 7rem);
   --line-w: max(1.2px,0.2vw);
   --nav-h: 3.5rem;
   --stroke-w: 1.5px;
@@ -104,21 +105,11 @@ body {
 }
 .site-main {
   flex: 1;
-  padding-block: clamp(20px, 3vw, 7rem) clamp(2rem, 5vw, 4rem);
+  padding-block: var(--padding-top) clamp(2rem, 5vw, 4rem);
   padding-inline: var(--pad);
 }
 img {
   user-select: none;
-}
-.home-flex {
-  width: 100%;
-  /* overflow: hidden; */
-  /* max-height: 80svh; */
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
-  /* border-bottom: var(--line-w) dashed var(--fg); */
 }
 mark {
   background-color: var(--accent);
@@ -130,28 +121,22 @@ mark {
   line-height: 0.86;
   letter-spacing: 0.005em;
 } */
- p {
+p {
   font-family: var(--font-body);
   font-size: 1.2rem;
- }
-.companion-image {
-  z-index: 1;
-  align-self: center;
-  margin: auto;
-  
-  width: auto;
-  max-width: min(550px, 90vw);
-  min-width: 350px;
-  height: auto;
-  flex: 1 1 350px;
-  /* transform: rotate(-45deg); */
 }
-.companion-image--desktop {
-  margin-top: calc(-1 * var(--pad));
-}
-.companion-image--mobile {
-  display: none;
-  padding-bottom: var(--pad);
+
+hr {
+  /* border: 1px dashed var(--fg); */
+  border: none;
+  height: 2px;
+  background: repeating-linear-gradient(
+    to right,
+    var(--fg) 0 6px,
+    transparent 6px 10px
+  );
+  margin-block: 2rem;
+  margin-inline: calc(-1 * var(--pad));
 }
 
 a:not(.no-animate) {
@@ -214,8 +199,17 @@ a:not(.no-animate):hover::before {
   }
   .companion-image {
     max-height: 320px;
-    
     min-width: revert;
     flex: revert;
   }
+  hr {
+    visibility: hidden;
+    margin-block: 0.5rem;
+  }
 }
+/* @media (min-width: 640px) {
+  .home-flex {
+    border-bottom: var(--line-w) dashed var(--fg);
+    padding-bottom: 10px;
+  }
+} */

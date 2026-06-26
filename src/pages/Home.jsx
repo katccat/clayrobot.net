@@ -18,6 +18,7 @@ export default function Home() {
     <>
       {/* <Splash /> */}
       <main className="site-main">
+        <title>CLAYROBOT</title>
         {/* <img src="/images/grid.webp" className="hero-image"></img> */}
         <div className="home-flex">
           <section className="hero">
@@ -26,11 +27,11 @@ export default function Home() {
             </h1>
             <LinkList index={INDEX} />
           </section>
-          <Img src="/images/robotma/robotma-halftone-shadow.png" className='companion-image companion-image--desktop' />
+          <Img src="/images/robotma/robotma-halftone.png" className='companion-image companion-image--desktop' />
           <Img src="/images/robotma/robotma-halftone-bg.png" className='companion-image companion-image--mobile' />
         </div>
-        <br></br>
-        <header className="section-head">
+        <hr></hr>
+        <header>
           <h2 className="section-head__title">Featured Projects</h2>
         </header>
         <FeaturedProjects />

@@ -28,8 +28,8 @@ html[data-theme='light'] {
   .site-nav {
     --bg: var(--accent);
     --fg: white;
-    backdrop-filter: invert(1) blur(1px);
-    background: rgb(from var(--bg) r g b / 0.92);
+    /* backdrop-filter: invert(1) blur(1px);
+    background: rgb(from var(--bg) r g b / 0.92); */
   }
 }
 

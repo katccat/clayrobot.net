@@ -1,21 +1,14 @@
 /* ============================================================
    section head (shared)
    ============================================================ */
-.section-head {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 1rem;
-
-}
 
 .section-head__title {
-  text-shadow: var(--stroke);
   font-family: var(--font-head);
-  font-weight: 900;
+  font-weight: 800;
   text-transform: uppercase;
-  font-size: clamp(1.5rem, 5vw, 3rem);
+  font-size: clamp(1.8rem, 5vw, 3rem);
   letter-spacing: 0.01em;
+  margin-bottom: 5px;
 }
 
 /* ============================================================
@@ -27,10 +20,10 @@
   /* word-break: break-all; */
   grid-template-columns: repeat(3, 1fr);
 
-  max-width: min(100%, 1000px);
+  max-width: min(100%, 1100px);
   /* width: auto; */
   /* seamless: a single shared border via collapsing offsets */
-  gap: 0.3rem;
+  gap: 0.7rem;
 }
 
 .tile {
@@ -87,7 +80,7 @@
   font-family: var(--font-head);
   font-weight: 700;
   /* text-transform: uppercase; */
-  font-size: 4.5cqi;
+  font-size: 5cqi;
   letter-spacing: 0.045cqi;
 }
 

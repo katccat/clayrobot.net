@@ -10,11 +10,22 @@ import Games from './pages/Games.jsx'
 import Posts from './pages/Posts.jsx'
 import NotFound from './pages/NotFound.jsx'
 
+const DEFAULT_TITLE = 'CLAYROBOT'
+
+const TITLES = {
+  '/': 'CLAYROBOT',
+  '/about': 'CLAYROBOT: about',
+  '/projects': 'CLAYROBOT: projects',
+  '/games': 'CLAYROBOT: games',
+  '/posts': 'CLAYROBOT: posts',
+}
+
 function ScrollToTop() {
   const { pathname } = useLocation()
 
   useEffect(() => {
     window.scrollTo(0, 0)
+    document.title = TITLES[pathname] ?? DEFAULT_TITLE
   }, [pathname])
 
   return null

@@ -92,3 +92,30 @@ html[data-theme='dark'] .hero__index-item:hover .hero__index-arrow img {
   opacity: 1;
   transform: rotate(45deg);
 }
+
+.home-flex {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.companion-image {
+  z-index: 1;
+  align-self: center;
+  margin: auto;
+  
+  width: auto;
+  max-width: min(550px, 90vw);
+  min-width: 350px;
+  height: auto;
+  flex: 1 1 350px;
+  /* transform: rotate(-45deg); */
+}
+.companion-image--desktop {
+  margin-top: calc(-0.8 * var(--padding-top));
+}
+.companion-image--mobile {
+  display: none;
+}

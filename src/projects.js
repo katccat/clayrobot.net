@@ -35,7 +35,7 @@ const PROJECTS = {
   },
   "pong": {
     title: 'Classic Pong',
-    image: '/images/projects/pong.png',
+    image: '/images/projects/pong.gif',
     href: '/games/pong',
     game: true,
   },
