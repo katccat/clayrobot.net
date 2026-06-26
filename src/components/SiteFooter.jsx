@@ -4,7 +4,7 @@ import { GITHUB, LINKEDIN } from '../consts'
 const FOOTER_LINKS = [
   { label: 'LinkedIn', href: LINKEDIN, external: true },
   { label: 'GitHub', href: GITHUB, external: true },
-  { label: 'About', href: '/about' },
+  { label: 'Legal', href: '/legal' },
 ]
 
 export default function SiteFooter() {

@@ -1,21 +1,57 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
   <head>
-    <title>CLAYROBOT</title>
+    <!-- Document setup -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!-- <meta name="description" content="Home of CLAYROBOT Games" /> -->
+
+    <!-- Primary meta -->
+    <title>CLAYROBOT</title>
+    <meta name="description" content="CLAYROBOT makes games that try something new. Home of I'm not a Robot." />
+
+    <!-- Icons & resource hints -->
     <link rel="icon" type="image/png" href="/images/favicon.ico" />
     <link rel="preload" href="/fonts/Matroska-RppG6.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="/fonts/Archivo-Variable.woff2" as="font" type="font/woff2" crossorigin />
+
+    <!-- Open Graph -->
+    <meta property="og:site_name" content="CLAYROBOT">
     <meta property="og:title" content="CLAYROBOT">
     <!-- <meta property="og:description" content="Home of CLAYROBOT Games"> -->
     <meta property="og:image" content="https://clayrobot.net/images/placeholder.webp">
     <meta property="og:url" content="https://clayrobot.net">
     <meta property="og:type" content="website">
-    
+
+    <!-- Structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "CLAYROBOT",
+      "url": "https://clayrobot.net"
+    }
+    </script>
   </head>
   <body>
+    <noscript>
+      <style>
+        a {
+          font-weight: bold;
+        }
+        a:visited {
+          color: blue;
+        }
+      </style>
+      <h1>CLAYROBOT.net</h1>
+      <h2>Well, this is awkward.</h2>
+      <img src="/images/frozen-tab.png">
+      <nav>
+        <ul>
+          <li><a href="https://github.com/katccat">GitHub</a></li>
+          <li><a href="https://clayrobot.artstation.com">ArtStation</a></li></li>
+        </ul>
+      </nav>
+    </noscript>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
