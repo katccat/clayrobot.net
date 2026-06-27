@@ -1,5 +1,5 @@
 export const SITE_NAME = 'CLAYROBOT'
-export const PLACEHOLDER_IMG = '/images/wordmark.webp'
+export const PLACEHOLDER_IMG = '/images/placeholder.png'
 export const RESUME = '/resume/'
 export const INAR = '/games/recaptcha/'
 export const INAR_APPSTORE = 'https://apps.apple.com/us/app/im-not-a-robot-game/id6775039742'
