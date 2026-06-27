@@ -1,13 +1,12 @@
 import { useOutletContext } from 'react-router-dom'
-import { GITHUB, LINKEDIN, DONATE, INAR_APPSTORE, ARTSTATION } from '../consts.js'
+import { GITHUB, LINKEDIN, DONATE, INAR_APPSTORE, ARTSTATION, RESUME } from '../consts.js'
 import LinkList from '../components/LinkList.jsx'
 import Img from '../Img.jsx'
 
 const INDEX = [
-  // { label: 'Resume', href: '/resume.pdf', external: true },
-  { label: 'GitHub', href: GITHUB, external: true },
-  { label: 'ArtStation', href: ARTSTATION, external: true },
   { label: 'LinkedIn', href: LINKEDIN, external: true },
+  { label: 'ArtStation', href: ARTSTATION, external: true },
+  { label: 'Resume', href: RESUME, external: true },
   { label: 'Donate', href: DONATE, external: true },
 ]
 
@@ -25,7 +24,7 @@ export default function About() {
           </p>
           <span className='about__subheading'>Inspirations</span>
           <p>
-            For CLAYROBOT, I took cues from restrained, neo brutalist designs found in places like 2021-2023 Twitter (drawing inspiration from its use of the halftone effect to evoke print media) and modernism.
+            For CLAYROBOT, I took cues from neo brutalist designs found in places like 2021-2023 Twitter (drawing inspiration from its use of the halftone effect to evoke print media) and modernism.
             <br></br><br></br>
             Recently, I’ve had a particular interest in creating something ephemeral that represents the mood of the Internet at that moment and distills it into a gameplay experience. That culminated in my latest project which I released on the App Store with Thomas, <a href={INAR_APPSTORE} className='no-animate'>I’m not a Robot.</a>
           </p>

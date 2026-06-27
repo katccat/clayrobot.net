@@ -1,0 +1,345 @@
+/* ============================================================
+   TOKENS
+   ============================================================ */
+:root {
+  font-size: 12px; /* scale knob — change this to resize everything */
+
+  --ink:         #1f2125;
+  --body:        #33363d;
+  --muted:       #6c7079;
+  --accent:      #1e77d1;
+  --accent-deep: #0d4ec6;
+  --line:        #e6e3df;
+  --line-soft:   #efece8;
+  --accent2:     #fa880f;
+  --chip-border: #f0e2d6;
+
+  --font-sans:   'Google Sans', system-ui, sans-serif;
+  --font-serif:  'Google Sans';
+}
+
+/* ============================================================
+   RESET & BASE
+   ============================================================ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--font-sans);
+  font-size: 0.96rem;
+  line-height: 1.46;
+  color: var(--body);
+  background: #fff;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: var(--accent-deep); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ============================================================
+   PAGE SHELL  (edit padding to adjust white space / print margins)
+   ============================================================ */
+.page {
+  width: 8.5in;
+  height: 11in;
+  margin: 0 auto;
+  padding: 0;
+  background: #fff;
+  border-bottom: 1px dashed rgba(0, 0, 0, 0.493);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media print {
+  .page { border: none; }
+}
+
+.page-content {
+  width: 100%;
+  padding: 0 0.4in;
+}
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 2.4rem;
+  padding-bottom: 0.9rem;
+  border-bottom: 2px solid var(--accent);
+}
+
+.header-left .name {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 3.1rem;
+  letter-spacing: -0.4px;
+  color: var(--ink);
+  line-height: 1;
+}
+
+.headline {
+  margin-top: 0.7rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--accent);
+  letter-spacing: 0.1px;
+}
+
+.contact-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.3rem 0.45rem;
+  margin-top: 0.45rem;
+  font-size: 1rem;
+  color: var(--muted);
+}
+.contact-row a {
+  color: var(--muted);
+}
+
+.contact-sep {
+  color: var(--line);
+  user-select: none;
+}
+
+/* ============================================================
+   BODY GRID  (left col = content, right col = sidebar)
+   ============================================================ */
+.body {
+  display: grid;
+  grid-template-columns: 1.95fr 1fr;
+  gap: 2.6rem;
+  margin-top: 1.5rem;
+}
+
+/* sidebar divider */
+.col-right {
+  --accent: var(--accent2);
+  position: relative;
+  padding-left: 2.2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.col-right .section {
+  margin-bottom: 0;
+}
+
+.col-spacer {
+  flex: 1;
+  max-height: 30px;
+}
+.col-right::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 2px; bottom: 0;
+  width: 1px;
+  background: var(--line);
+}
+
+/* ============================================================
+   SECTION HEADINGS
+   ============================================================ */
+.section { margin-bottom: 1.4rem; }
+.section:last-child { margin-bottom: 0; }
+
+.section-title {
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+  /* text-transform: uppercase; */
+  color: var(--accent);
+  margin-bottom: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+.section-title::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--line-soft);
+}
+
+/* ============================================================
+   SUMMARY
+   ============================================================ */
+.summary {
+  font-size: 0.98rem;
+  line-height: 1.55;
+  color: var(--body);
+}
+
+/* ============================================================
+   ENTRIES  (projects / experience / education)
+   ============================================================ */
+.entry { margin-bottom: 1rem; }
+.entry:last-child { margin-bottom: 0; }
+
+.entry-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+}
+
+.entry-title {
+  font-size: 1.04rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.entry-link {
+  font-size: 0.87rem;
+  color: var(--accent-deep);
+  font-weight: 500;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.entry-sub {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--body);
+  margin-top: 0.1rem;
+}
+
+.entry-meta {
+  font-size: 0.87rem;
+  color: var(--muted);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.entry-stack {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-top: 0.2rem;
+  letter-spacing: 0.1px;
+}
+
+/* ============================================================
+   BULLET LISTS
+   ============================================================ */
+.bullets {
+  list-style: none;
+  margin-top: 0.4rem;
+}
+.bullets li {
+  position: relative;
+  padding-left: 1.1rem;
+  margin-bottom: 0.25rem;
+  font-size: 0.94rem;
+  line-height: 1.42;
+  color: var(--body);
+}
+.bullets li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 5.5px;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+/* ============================================================
+   SIDEBAR — SKILLS
+   ============================================================ */
+.skill-group { margin-bottom: 0.7rem; }
+
+.skill-label {
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.skill-items {
+  font-size: 0.9rem;
+  color: var(--body);
+  line-height: 1.5;
+}
+
+/* ============================================================
+   SIDEBAR — CHIPS  (Top Skills)
+   ============================================================ */
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0.4rem 0;
+}
+
+.chip {
+  font-size: 0.82rem !important;
+  line-height: 1;
+  font-weight: 600;
+  color: white;
+  background: var(--accent-deep);
+  /* border: 1px solid var(--chip-border); */
+  /* border-radius: 999px; */
+  padding: 0.3rem 0.6rem;
+}
+
+/* ============================================================
+   SIDEBAR — PLAIN LISTS  (certs, awards)
+   ============================================================ */
+.plain-list {
+  list-style: none;
+}
+.plain-list li {
+  position: relative;
+  padding-left: 1.1rem;
+  margin-bottom: 0.3rem;
+  font-size: 0.9rem;
+  line-height: 1.34;
+  color: var(--body);
+}
+.plain-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 4.5px;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+/* ============================================================
+   SIDEBAR — EDUCATION
+   ============================================================ */
+.edu-item { margin-bottom: 0.9rem; }
+.edu-item:last-child { margin-bottom: 0; }
+
+.edu-degree {
+  font-size: 0.9rem;
+  color: var(--body);
+  margin-top: 0.1rem;
+}
+
+.edu-meta {
+  font-size: 0.86rem;
+  color: var(--muted);
+  margin-top: 0.1rem;
+}
+
+.edu-note {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-top: 0.1rem;
+  font-style: italic;
+}
+
+/* ============================================================
+   PRINT
+   ============================================================ */
+@media print {
+  @page { size: Letter; margin: 0; }
+  body  { background: #fff; }
+  .page { margin: 0; }
+}

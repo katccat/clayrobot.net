@@ -1,5 +1,4 @@
 User-agent: *
-Disallow: /games/recaptcha/legal
-Disallow: /recaptcha/legal
+Disallow: /resume
 
 Sitemap: https://clayrobot.net/sitemap.xml

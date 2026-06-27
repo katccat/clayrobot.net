@@ -21,7 +21,7 @@ const PROJECTS = {
   },
   "asteroids": {
     title: 'Asteroids 100',
-    description: 'A twist on Asteroids where instead of lives you have clones!',
+    description: 'A twist on Asteroids where instead of lives you have clones! Built on HTML5 Canvas.',
     image: '/images/projects/asteroids100.webp',
     href: '/games/asteroids',
     source: 'https://github.com/katccat/asteroids100',
@@ -30,8 +30,6 @@ const PROJECTS = {
   "clayrobot": {
     title: 'clayrobot.net',
     description: 'React SPA website with a Node.js backend.',
-    image: '/images/projects/clayrobot-mosaic.webp',
-    pixelatedImage: true,
     tags: ['React', 'Node.js', 'Vite', 'Graphic Design'],
     source: 'https://github.com/katccat/clayrobot.net',
     game: false,
@@ -48,6 +46,7 @@ const PROJECTS = {
     image: '/images/projects/pong.gif',
     href: '/games/pong',
     game: true,
+    exclude: true,
   },
 }
 export const projects = {

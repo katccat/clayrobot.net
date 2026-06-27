@@ -5,7 +5,7 @@ export default function FeaturedProjects({ projectKeys = [], gamesOnly = false }
   const projectList = (projectKeys.length > 0
     ? projectKeys.map(key => projects.get(key)).filter(Boolean)
     : projects.getAll())
-    .filter(project => !gamesOnly || project.game === true);
+    .filter(project => gamesOnly ? project.game === true : !project.exclude);
   
   return (
     <section className="featured" id="featured">

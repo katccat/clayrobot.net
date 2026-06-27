@@ -9,7 +9,7 @@ import { useMediaQuery } from '../useMediaQuery.js'
 
 const INDEX = [
   { label: 'About', href: '/about' },
-  { label: 'Projects', href: '/projects/' },
+  { label: 'Projects', href: '/projects' },
   { label: 'Posts', href: '/posts' },
   { label: 'GitHub', href: GITHUB, external: true },
 ]
