@@ -10,7 +10,7 @@ function formatDate(date) {
   return parsed.toLocaleDateString('en-US', {
     year: 'numeric',
     month: 'long',
-    day: 'numeric',
+    // day: '2-digit',
     timeZone: 'UTC',
   })
 }
@@ -23,11 +23,13 @@ export default function Posts() {
         &lt;Posts&gt;
         {/* </mark> */}
       </h1>
-      <br></br>
       {posts.length === 0 ? (
-        <p className="posts-list__empty">
-          Nothing here yet.
-        </p>
+        <>
+          <br></br>
+          <p className="posts-list__empty">
+            Nothing here yet.
+          </p>
+        </>
       ) : (
         <ul className={`
         ${styles.linkList} ${styles.noLowerCase} ${styles.dashed}
@@ -38,10 +40,10 @@ export default function Posts() {
               <span>
                 <span className={styles.title}>{post.title}</span>
                 {post.description && (
-                  <p className="posts-list__desc">{post.description}</p>
+                  <p className={styles.description}>{post.description}</p>
                 )}
                 {post.date && (
-                  <time className="posts-list__date" dateTime={post.date}>
+                  <time className={styles.date} dateTime={post.date}>
                     {formatDate(post.date)}
                   </time>
                 )}
@@ -51,15 +53,6 @@ export default function Posts() {
           ))}
         </ul>
       )}
-      <br></br><br></br>
-      <Img 
-        style={{
-        	imageRendering: 'pixelated',
-        	width: 'min(200px, 100%)',
-        	height: 'auto',
-        }}
-        src='/images/frozen-tab.png'
-      ></Img>
     </main>
   )
 }
