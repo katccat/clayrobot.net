@@ -2,10 +2,16 @@
    link preview — OpenGraph-style card
    ============================================================ */
 .link-preview {
-  --border: 2px dashed var(--fg);
+  --border-color: var(--fg);
+  --border: 2px dashed var(--border-color);
 }
 html[data-theme='dark'] .link-preview {
-  --border: var(--line-w) solid var(--fg);
+  --border-color: var(--bg2);
+  --border: var(--line-w) solid var(--border-color);
+  border: var(--border);
+}
+html[data-theme='light'] .link-preview {
+  border-bottom: var(--border);
 }
 .link-preview {
   /* --fg: black;
@@ -18,12 +24,12 @@ html[data-theme='dark'] .link-preview {
   max-width: min(100%, 520px);
   /* margin-block: 2rem; */
   background: var(--bg);
-  border-bottom: var(--border);
+  /* border-bottom: var(--border); */
   overflow: hidden;
 }
 
-.link-preview:hover {
-  border-color: var(--fg);
+html[data-theme='dark'] .link-preview:hover {
+  --border-color: var(--bg);
 }
 
 .link-preview__media {

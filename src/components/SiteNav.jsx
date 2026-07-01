@@ -17,7 +17,7 @@ export default function SiteNav({ theme, onToggleTheme }) {
         <div className="site-nav__right">
           <div className="site-nav__links">
             {LINKS.map((link) => (
-              <NavLink key={link.label} to={link.href}>{link.label}</NavLink>
+              <NavLink key={link.label} to={link.href} end>{link.label}</NavLink>
             ))}
           </div>
           <button

@@ -16,6 +16,10 @@
    ============================================================ */
 
 .tile-grid {
+  /* --bg: var(--bg-light);
+  --fg: var(--fg-light);
+  --muted: var(--muted-light);
+  color: var(--fg); */
   display: grid;
   /* word-break: break-all; */
   grid-template-columns: repeat(3, 1fr);
@@ -23,10 +27,19 @@
   max-width: min(100%, 1100px);
   /* width: auto; */
   /* seamless: a single shared border via collapsing offsets */
-  gap: 0.7rem;
+  gap: 1rem;
 }
-
+html[data-theme='light'] .tile {
+  --border-color: var(--fg);
+}
+html[data-theme='dark'] .tile {
+  --border-color: var(--bg2);
+}
 .tile {
+  --border-color: var(--border-color);
+  /* per-tile ink layers, overridden by :nth-child below */
+  --ink-1: var(--ink-magenta);
+  --ink-2: var(--ink-cyan);
   container-type: size;
   aspect-ratio: 1;
   position: relative;
@@ -34,7 +47,41 @@
   flex-direction: column;
   background: var(--bg);
   overflow: hidden;
-  border: var(--line-w) solid var(--bg2);
+  border: var(--line-w) solid var(--border-color);
+  /* hard, blur-less offset shadows: misregistered print ink layers */
+  box-shadow:
+    5px 5px 0 0 var(--ink-1),
+    9px 9px 0 0 var(--ink-2);
+  transition: box-shadow 180ms ease, transform 180ms ease;
+}
+
+/* rotate the ink pairing + offset direction by child number so no two
+   neighbours print alike — like sheets misfed through a screenprint press */
+.tile:nth-child(4n + 1) {
+  --ink-1: var(--ink-magenta);
+  --ink-2: var(--ink-cyan);
+  box-shadow: -5px 5px 0 0 var(--ink-1), -9px 9px 0 0 var(--ink-2);
+}
+.tile:nth-child(4n + 2) {
+  --ink-1: var(--ink-cyan);
+  --ink-2: var(--ink-yellow);
+  box-shadow: -5px 5px 0 0 var(--ink-1), -9px 9px 0 0 var(--ink-2);
+}
+.tile:nth-child(4n + 3) {
+  --ink-1: var(--ink-yellow);
+  --ink-2: var(--ink-magenta);
+  box-shadow: -5px 5px 0 0 var(--ink-1), -9px 9px 0 0 var(--ink-2);
+}
+.tile:nth-child(4n) {
+  --ink-1: var(--ink-yellow);
+  --ink-2: var(--ink-cyan);
+  box-shadow: -5px 5px 0 0 var(--ink-1), -9px 9px 0 0 var(--ink-2);
+}
+
+/* press the sheet flat on hover — ink layers slide back under the tile */
+.tile:hover {
+  transform: translate(2px, -2px);
+  box-shadow: -7px 7px 0 0 var(--ink-1), -11px 11px 0 0 var(--ink-2);
 }
 
 .tile__link {
@@ -43,7 +90,7 @@
   height: 100%;
 }
 
-.tile__media {
+.tile__media { 
   z-index: 0;
   overflow: hidden;
   background-color: var(--inset);
@@ -56,12 +103,17 @@
   transition: transform 240ms ease;
 }
 
+.tile:hover {
+  /* --border-color: var(--bg); */
+}
 /* static image animates on hover (placeholder: the label drifts/zooms) */
 .tile:hover .tile__media {
-  transform: scale(1.08);
+  transform: scale(1.05);
 }
 
 .tile__body {
+  box-shadow: 0px -3px 8px 1px #0000003b;
+  border-top: var(--line-w) solid var(--border-color);
   background-color: var(--bg);
   z-index: 1;
   padding: 1rem 1rem 1.25rem;
@@ -71,6 +123,7 @@
   flex: 1;
 }
 .tile:hover .tile__body {
+  /* border-color: var(--bg); */
   --muted: var(--muted-inv);
   color: var(--bg);
   background-color: var(--fg);
@@ -91,6 +144,8 @@
 }
 
 .tile__source {
+  border-bottom: 1px solid var(--border-color);
+  border-left: 1px solid var(--border-color);
   position: absolute;
   top: 0;
   right: 0;

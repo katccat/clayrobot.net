@@ -1,8 +1,3 @@
-section.featured {
-    /* width: fit-content;
-    max-width: 100%;
-    align-self: center; */
-}
 section.featured div.content {
     display: flex;
     flex-wrap: wrap-reverse;

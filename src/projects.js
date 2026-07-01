@@ -36,7 +36,7 @@ const PROJECTS = {
   },
   "cfi": {
     title: 'damonwelber.com',
-    description: 'A portfolio site designed and built for a working CFI.',
+    description: 'A portfolio site designed for a working CFI, built as an MPA with React and Astro.',
     href: 'https://damonwelber.com',
     source: 'https://github.com/katccat/CFI-Website',
     game: false,

@@ -1,15 +1,16 @@
 import { Link } from 'react-router-dom'
+import styles from '../styles/link-list.module.css'
 
 export default function LinkList({ index, showArrow = true, noLowerCase = false }) {
   return (
-    <ul className={`hero__index${noLowerCase ? ' no-lowercase' : ''}`}>
+    <ul className={`${styles.linkList}${noLowerCase ? ` ${styles.noLowerCase}` : ''}`}>
       {index.map((item) => {
         const inner = (
           <>
-            <span className="hero__index-label">{item.label}</span>
+            <span>{item.label}</span>
             {showArrow && (
-              <span className="hero__index-meta">
-                <span className="hero__index-arrow" aria-hidden="true">
+              <span className={styles.linkListMeta}>
+                <span className={`${styles.arrow} ${styles.arrow}`} aria-hidden="true">
                   <img src="/images/arrow.svg" alt="" />
                 </span>
               </span>
@@ -17,7 +18,7 @@ export default function LinkList({ index, showArrow = true, noLowerCase = false 
           </>
         )
         return (
-          <li className="hero__index-item" key={item.label}>
+          <li className={styles.linkListEntry} key={item.label}>
             {item.external ? (
               <a href={item.href} className='no-animate' rel="noopener noreferrer">
                 {inner}

@@ -53,6 +53,7 @@
     max-width: min(100%, 800px);
 }
 .about__subheading {
+    line-height: 3rem;
     /* text-shadow: var(--glow); */
     font-family: var(--font-head);
     font-weight: 800;

@@ -37,15 +37,23 @@
   --stroke-w: 1.5px;
   --stroke: calc(-1 * var(--stroke-w)) calc(-1 * var(--stroke-w)) 0 var(--bg), var(--stroke-w) calc(-1 * var(--stroke-w)) 0 var(--bg), calc(-1 * var(--stroke-w)) var(--stroke-w) 0 var(--bg), var(--stroke-w) var(--stroke-w) 0 var(--bg);
   --accent: #e94116;
+  --bg-light: white;
+  --bg-dark: black;
+  --fg-light: black;
+  --fg-dark: white;
   --muted-light: #8a8a8a;
   --muted-dark: #bcbcbc;
+  /* print-ink palette (screenprint / riso / CMYK misregistration) */
+  --ink-cyan: #00aeef;
+  --ink-magenta: #ec008c;
+  --ink-yellow: #ffd400;
 }
 
 html[data-theme='dark'] {
   --accent: white;
   --bg2: rgb(45, 45, 45);
-  --bg: #000000;
-  --fg: #ffffff;
+  --bg: var(--bg-dark);
+  --fg: var(--fg-dark);
   --muted: var(--muted-dark);
   --muted-inv: var(--muted-light);
   --line: #ffffff;
@@ -55,15 +63,16 @@ html[data-theme='dark'] {
 			0 0 2px #fff,
 			0 0 5px #fff;
   hr {
-    visibility: hidden;
+    height: 1px;
+    /* visibility: hidden; */
   }
 }
 
 html[data-theme='light'] {
   --accent: #e94116;
   --bg2: rgb(237, 237, 237);
-  --bg: #ffffff;
-  --fg: #000000;
+  --bg: var(--bg-light);
+  --fg: var(--fg-light);
   --muted: var(--muted-light);
   --muted-inv: var(--muted-dark);
   --line: #000000;

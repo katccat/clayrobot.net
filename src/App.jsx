@@ -7,7 +7,8 @@ import Home from './pages/Home.jsx'
 import About from './pages/About.jsx'
 import Projects from './pages/Projects.jsx'
 import Games from './pages/Games.jsx'
-import ComingSoon from './pages/ComingSoon.jsx'
+import Posts from './pages/Posts.jsx'
+import Post from './pages/Post.jsx'
 import NotFound from './pages/NotFound.jsx'
 import Legal from './pages/Legal.jsx'
 
@@ -27,6 +28,9 @@ function ScrollToTop() {
 
   useEffect(() => {
     window.scrollTo(0, 0)
+    // Individual posts (/posts/:slug) set their own title in Post.jsx; don't
+    // clobber it here (this parent effect runs after the child's).
+    if (pathname.startsWith('/posts/')) return
     document.title = TITLES[pathname] ?? NOT_FOUND_TITLE
   }, [pathname])
 
@@ -53,7 +57,8 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/games" element={<Games />} />
-        <Route path="/posts" element={<ComingSoon />} />
+        <Route path="/posts" element={<Posts />} />
+        <Route path="/posts/:slug" element={<Post />} />
         <Route path="/about" element={<About />} />
         <Route path="/legal" element={<Legal />} />
         <Route path="*" element={<NotFound />} />

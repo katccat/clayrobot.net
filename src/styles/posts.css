@@ -1,0 +1,131 @@
+/* Blog listing (/posts) and single-post (/posts/:slug) styles.
+   Uses the shared theme tokens from global.css. */
+
+.posts-list {
+  list-style: none;
+  margin: 2rem 0 0;
+  width: 100%;
+  max-width: 760px;
+}
+
+.posts-list__item {
+  border-top: 2px dashed var(--line);
+}
+.posts-list__item:hover {
+  background-color: var(--fg);
+  color: var(--bg);
+}
+.posts-list__item:last-child {
+  border-bottom: 2px dashed var(--line);
+}
+
+.posts-list__link {
+  display: block;
+  padding: 0.8rem 1rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+.posts-list__title {
+  font-family: var(--font-head);
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.posts-list__date {
+  display: block;
+  font-family: var(--font-body);
+  color: var(--muted);
+  font-size: 0.95rem;
+  margin-top: 0.35rem;
+}
+
+.posts-list__desc {
+  /* margin: 0.5rem 0 0; */
+  font-size: 1.1rem;
+}
+
+.posts-list__empty {
+  margin-top: 2rem;
+  /* color: var(--muted); */
+}
+
+/* Single post */
+.post {
+  width: 100%;
+  max-width: 720px;
+}
+
+.post__back {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.post__title {
+  font-family: var(--font-head);
+  font-weight: 800;
+  font-size: clamp(2rem, 6vw, 3.25rem);
+  line-height: 1;
+  margin: 0;
+}
+
+.post__date {
+  display: block;
+  color: var(--muted);
+  font-family: var(--font-body);
+  margin-top: 0.75rem;
+}
+
+.post__body {
+  margin-top: 2.5rem;
+  font-family: var(--font-body);
+  font-size: 1.2rem;
+  line-height: 1.65;
+}
+
+.post__body h2 {
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: 1.75rem;
+  margin: 2.5rem 0 1rem;
+}
+.post__body h3 {
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: 1.35rem;
+  margin: 2rem 0 0.75rem;
+}
+
+.post__body p {
+  margin: 1.15rem 0;
+}
+
+.post__body img {
+  max-width: 100%;
+  height: auto;
+}
+
+.post__body pre {
+  background: var(--inset);
+  padding: 1rem 1.25rem;
+  overflow-x: auto;
+  border: var(--line-w) solid var(--line);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.post__body :not(pre) > code {
+  background: var(--inset);
+  padding: 0.15em 0.4em;
+  font-size: 0.95em;
+}
+
+.post__body blockquote {
+  margin: 1.5rem 0;
+  padding-left: 1.25rem;
+  border-left: 3px solid var(--accent);
+  color: var(--muted);
+}

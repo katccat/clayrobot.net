@@ -17,7 +17,7 @@ export default function About() {
     <main className="site-main">
       <section className="about">
         <Img className="about__img" src={src} fetchpriority="high" />
-        <div className='about__text'>
+        <div className='text'>
           <h1 className='about__title'>About</h1>
           <p>
             My name is Khan, and I am a published developer. I set out to make games that feel genuinely novel. In my projects I integrate my unique vision and proficiency in 3D software and graphic design.
