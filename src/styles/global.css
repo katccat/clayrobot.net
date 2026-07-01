@@ -1,7 +1,8 @@
 @import "./reset.css";
 @import "./nav.css";
 @import "./home.css";
-@import "./featured.css";
+@import "./projects.css";
+@import "./link-preview.css";
 @import "./footer.css";
 @import "./splash.css";
 @import "./about.css";
@@ -31,13 +32,13 @@
   --maxw: 1200px;
   --pad: clamp(1.25rem, 4vw, 4rem);
   --padding-top: clamp(20px, 3vw, 7rem);
-  --line-w: max(1.2px,0.2vw);
+  --line-w: min(1.5px,0.3vw);
   --nav-h: 3.5rem;
   --stroke-w: 1.5px;
   --stroke: calc(-1 * var(--stroke-w)) calc(-1 * var(--stroke-w)) 0 var(--bg), var(--stroke-w) calc(-1 * var(--stroke-w)) 0 var(--bg), calc(-1 * var(--stroke-w)) var(--stroke-w) 0 var(--bg), var(--stroke-w) var(--stroke-w) 0 var(--bg);
   --accent: #e94116;
   --muted-light: #8a8a8a;
-  --muted-dark: #757575;
+  --muted-dark: #bcbcbc;
 }
 
 html[data-theme='dark'] {
@@ -45,8 +46,8 @@ html[data-theme='dark'] {
   --bg2: rgb(45, 45, 45);
   --bg: #000000;
   --fg: #ffffff;
-  --muted: var(--muted-light);
-  --muted-inv: var(--muted-dark);
+  --muted: var(--muted-dark);
+  --muted-inv: var(--muted-light);
   --line: #ffffff;
   --inset: #0c0c0c;
   --glow:
@@ -63,8 +64,8 @@ html[data-theme='light'] {
   --bg2: rgb(237, 237, 237);
   --bg: #ffffff;
   --fg: #000000;
-  --muted: var(--muted-dark);
-  --muted-inv: var(--muted-light);
+  --muted: var(--muted-light);
+  --muted-inv: var(--muted-dark);
   --line: #000000;
   --inset: #f2f2f2;
   --glow:
@@ -147,13 +148,27 @@ hr.no-space {
   margin: 0;
 }
 
+.text {
+    display: flex;
+    flex: 1 1 350px;
+    min-width: min(100%, 350px);
+    max-width: 700px;
+    gap: 0.9rem;
+    flex-direction: column;
+}
+.text p {
+    font-size: 1.2rem;
+    /* font-weight: lighter; */
+}
+
 a:not(.no-animate) {
   position: relative;
   isolation: isolate;
 }
-a:hover {
+a:not(.no-recolor):hover {
   background: var(--fg);
   color: var(--bg);
+  --muted: var(--muted-inv);
   cursor: pointer;
 }
 /* The highlight extends past the text on an out-of-flow pseudo-element, so the

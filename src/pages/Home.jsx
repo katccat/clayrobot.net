@@ -2,7 +2,7 @@ import { LINKEDIN } from '../consts.js'
 import { GITHUB } from '../consts.js'
 import LinkList from '../components/LinkList.jsx'
 import Img from '../Img.jsx'
-import FeaturedProjects from '../components/FeaturedProjects.jsx'
+import Featured from '../components/Featured.jsx'
 import { useMediaQuery } from '../useMediaQuery.js'
 // import Splash from '../components/Splash.jsx'
 // import ArtStation from './ArtStation.jsx'
@@ -34,12 +34,9 @@ export default function Home() {
             <Img src="/images/robotma/robotma-halftone.png" className='companion-image companion-image--desktop' fetchpriority="high" />
           )}
         </div>
+
         <hr></hr>
-        <header>
-          <h2 className="section-head__title">Featured Projects</h2>
-        </header>
-        <FeaturedProjects />
-        {/* <ArtStation /> */}
+        <Featured />
       </main>
     </>
   )

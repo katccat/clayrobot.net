@@ -1,7 +1,7 @@
 import { projects } from '../projects'
 import { PLACEHOLDER_IMG } from '../consts';
 
-export default function FeaturedProjects({ projectKeys = [], gamesOnly = false }) {
+export default function ProjectsGrid({ projectKeys = [], gamesOnly = false }) {
   const projectList = (projectKeys.length > 0
     ? projectKeys.map(key => projects.get(key)).filter(Boolean)
     : projects.getAll())

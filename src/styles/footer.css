@@ -27,6 +27,7 @@
 .site-footer__meta {
   font-family: var(--font-head);
   font-size: 0.78rem;
+  /* font-weight: 400; */
   text-transform: uppercase;
   letter-spacing: 0.06em;
   color: var(--muted);

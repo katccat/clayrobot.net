@@ -1,12 +1,12 @@
 // import GITHUB from './links'
-import FeaturedProjects from "../components/FeaturedProjects"
+import ProjectsGrid from "../components/ProjectsGrid"
 
 export default function Projects() {
   return (
     <main className="site-main">
         <h1 className='about__title'>clayrobot Games</h1>
         <br></br>
-        <FeaturedProjects gamesOnly={true} />
+        <ProjectsGrid gamesOnly={true} />
     </main>
   )
 }

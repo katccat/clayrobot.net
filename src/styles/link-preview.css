@@ -1,0 +1,74 @@
+/* ============================================================
+   link preview — OpenGraph-style card
+   ============================================================ */
+.link-preview {
+  --border: 2px dashed var(--fg);
+}
+html[data-theme='dark'] .link-preview {
+  --border: var(--line-w) solid var(--fg);
+}
+.link-preview {
+  /* --fg: black;
+  --bg: white;
+  --muted: var(--muted-light);
+  color: var(--fg); */
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: min(100%, 520px);
+  /* margin-block: 2rem; */
+  background: var(--bg);
+  border-bottom: var(--border);
+  overflow: hidden;
+}
+
+.link-preview:hover {
+  border-color: var(--fg);
+}
+
+.link-preview__media {
+  aspect-ratio: 1200 / 630;
+  overflow: hidden;
+  background-color: var(--inset);
+}
+
+.link-preview__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 240ms ease;
+}
+
+.link-preview:hover .link-preview__image {
+  transform: scale(1.05);
+}
+
+.link-preview__body {
+  border-top: var(--border);
+  padding: 0.85rem 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.link-preview__site {
+  color: var(--muted);
+  font-family: var(--font-head);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.72rem;
+}
+
+.link-preview__title {
+  font-family: var(--font-head);
+  font-weight: 600;
+  font-size: 1.05rem;
+  line-height: 1.2;
+}
+
+.link-preview__desc {
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.4;
+  max-width: 60ch;
+}

@@ -1,0 +1,14 @@
+section.featured {
+    /* width: fit-content;
+    max-width: 100%;
+    align-self: center; */
+}
+section.featured div.content {
+    display: flex;
+    flex-wrap: wrap-reverse;
+    margin-block: 1rem;
+    gap: 2rem;
+    
+    /* max-width: 1200px; */
+    justify-content: flex-start;
+}

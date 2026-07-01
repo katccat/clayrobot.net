@@ -34,6 +34,7 @@ html[data-theme='light'] {
 }
 
 .site-nav__logo {
+  user-select: none;
   font-family: var(--font-display);
   font-size: clamp(1rem, 2.6vw, 1.5rem);
   /* letter-spacing: 0.02em; */
