@@ -9,6 +9,7 @@ import Projects from './pages/Projects.jsx'
 import Games from './pages/Games.jsx'
 import Posts from './pages/Posts.jsx'
 import Post from './pages/Post.jsx'
+import ComingSoon from './pages/ComingSoon.jsx'
 import NotFound from './pages/NotFound.jsx'
 import Legal from './pages/Legal.jsx'
 
@@ -57,7 +58,7 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/games" element={<Games />} />
-        <Route path="/posts" element={<Posts />} />
+        <Route path="/posts" element={<ComingSoon />} />
         <Route path="/posts/:slug" element={<Post />} />
         <Route path="/about" element={<About />} />
         <Route path="/legal" element={<Legal />} />
