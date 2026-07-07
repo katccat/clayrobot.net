@@ -1,0 +1,34 @@
+.cascade {
+  display: inline-block;
+}
+
+.line {
+  display: block;
+}
+
+.word {
+  display: inline-block;
+  will-change: transform, opacity;
+  animation-name: cascadeFadeIn;
+  animation-fill-mode: both;
+  animation-timing-function: ease-out;
+}
+
+@keyframes cascadeFadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(0.02em);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .word {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}

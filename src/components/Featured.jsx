@@ -17,7 +17,7 @@ export default function Featured ({ projectKeys = [], gamesOnly = false }) {
           What's <mark>new.</mark>
         </span>
       <div className={styles.content}>
-        <LinkPreview href={'INAR_APPSTORE'} {...ogPreviews[INAR_APPSTORE]} />
+        <LinkPreview href={INAR_APPSTORE} {...ogPreviews[INAR_APPSTORE]} />
         <div className='text'>
           <p>
             I'm not a Robot is now available to download on the App Store.

@@ -3,6 +3,7 @@ import { GITHUB } from '../consts.js'
 import LinkList from '../components/LinkList.jsx'
 import Img from '../Img.jsx'
 import Featured from '../components/Featured.jsx'
+import CascadeText from '../components/CascadeText.jsx'
 import { useMediaQuery } from '../useMediaQuery.js'
 // import Splash from '../components/Splash.jsx'
 // import ArtStation from './ArtStation.jsx'
@@ -24,7 +25,7 @@ export default function Home() {
         <div className="home-flex">
           <section className="hero">
             <h1 className="hero__wordmark">
-              CLAY<br/>ROBOT<br/>.net
+              <CascadeText text={'CLAY\nROBOT\n.net'} />
             </h1>
             <LinkList index={INDEX} />
           </section>
@@ -37,6 +38,8 @@ export default function Home() {
 
         <hr></hr>
         <Featured />
+        <hr></hr>
+        <Img src='/images/robotma/robotma-matrix.png'></Img>
       </main>
     </>
   )
